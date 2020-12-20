@@ -1,0 +1,666 @@
+---
+title: "A influência do perfil socioeconômico na avaliação da transparência passiva dos municípios goianos"
+author: "Diego Cavalcante Souza de Athayde"
+date: "27/04/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+<div style="text-align: justify">## RESUMO
+
+Este estudo buscou analisar o índice de transparência passiva dos municípios goianos avaliados pela 3ª edição da Escala Brasil Transparente, da CGU, a partir do perfil socioeconômico de cada município integrante da amostra. À luz da teoria da agência, buscou-se compreender a assimetria de informação existente entre sociedade e gestores públicos, e como a transparência da gestão figura como ferramenta imprescindível para que se permita à sociedade assumir certo grau de controle sobre as ações de representantes e seus agentes. Buscando explicar a nota atribuída a cada município da amostra, foram levantados dados que refletem características municipais de emprego e renda, desenvolvimento municipal e finanças públicas. Os indicadores testados foram: Salário Médio Mensal, População Economicamente Ativa, Taxa de Desocupação, Taxa de Ocupação, Índice de Desenvolvimento Humano Municipal, Índice Firjan de Desenvolvimento Municipal, Índice de Homicídio, Produto Interno Bruto Municipal, Receita Total, Índice Firjan de Gestão Fiscal, Mesorregiões, Microrregiões e Filiação Partidária do Gestor Municipal (prefeito). Os resultados encontrados apontam para uma baixa média de transparência passiva dos municípios goianos, mesmo os mais economicamente desenvolvidos. Os aspectos de emprego, renda e finanças públicas apresentaram maior relação com a nota atribuída aos municípios do que as variáveis sobre desenvolvimento municipal. As variáveis que explicam o desenvolvimento municipal dos municípios apresentaram baixa relação com a nota da EBT, sendo o Índice de Homicídio dos municípios o indicador que revela significância sobre o resultado explicado. O modelo proposto se mostrou útil enquanto ferramenta preditora da variável dependente EBT, apresentando indícios suficientes para afirmar que 12% da variabilidade dos valores da escala EBT é explicada pela variação ocorrida nas variáveis DESOCUP, ÍNDICE_HOMIC, IFGF e SMM.
+
+Palavras-chave: Transparência Passiva; Accountability; Escala Brasil Transparente.
+
+## ABSTRACT
+
+This paper aimed to analyze the passive transparency index of the municipalities of Goiás evaluated by the 3rd edition of the Brazilian Transparent Scale, based on the socioeconomic profile of each city member of the sample. In the light of the agency's theory, we sought to understand the information asymmetry existent between society and public managers, and how the transparency of management is an indispensable tool for allowing society to assume a certain degree of control over the actions of representatives and their agents. Seeking to explain the score attributed to each municipality of the sample, data were collected reflecting municipal characteristics of employment and income, municipal development and public finances. The indicators tested were: Monthly Average Wage, Economically Active Population, Unemployment Rate, Occupancy Rate, Municipal Human Development Index, Firjan Municipal Development Index, Homicide Index, Municipal Gross Domestic Product, Total Revenue, Firjan Tax Management Index, Mesoregions, Microregions and Partisan Affiliation of the Municipal Manager (Mayor). The results found indicate a low average passive transparency of the municipalities of Goiás, even the most economically developed. The aspects of employment, income and public finances had a greater relationship with the note attributed to municipalities than the variables on municipal development. The variables that explain the Municipal development of the municipalities presented low relationship with the EBT note, the homicide rate of the municipalities being the indicator that reveals significance on the result explained. The proposed model proved to be useful as a predictive tool for the dependent variable, showing enough evidence to affirm that 12% of the variability of the EBT scale values is explained by the variation occurring in the variables DESOCUP, ÍNDICE_HOMIC, IFGF and SMM.
+	
+Keywords: Passive Transparency; Accountability; Brazil Transparent Scale.
+
+## 1. INTRODUÇÃO
+
+A presente pesquisa tem o propósito de abordar a questão da transparência passiva da gestão pública de uma amostra de municípios do estado de Goiás. A partir da avaliação desses municípios pela Escala Brasil Transparente, promovida pela Controladoria-Geral da União (CGU), pretende-se verificar se características regionais, sociais, fiscais, econômicas e orçamentárias são significantes na explicação do grau atribuído nessa avaliação. 
+
+Assim como no setor privado, na administração pública há um descompasso de interesses entre aqueles que comandam e aqueles que executam. Entendendo que os indivíduos são dotados de racionalidade, ou seja, inclinados a maximizar seus ganhos, alinhados aos seus próprios interesses, há nessa questão uma situação de conflito (Slomski et. al., 2008, p. 32). Esse conflito, analisado dentro da teoria da administração conhecida como Teoria da Agência, parte da relação contratual existente entre principal e agente, sendo o primeiro o proprietário dos recursos, e o segundo o gestor.
+
+Um dos motivos desse conflito é a chamada assimetria de informação. Nesse entendimento, o principal (proprietário) não tem acesso às mesmas informações que seu agente delegado (gestor), ficando, dessa forma, impossibilitado de controlar o curso de ações do seu agente, de modo que estes sejam sempre alinhados com seus interesses. Transportando para o setor público, a sociedade (principal), assim como mencionado, não dispõe de informações suficientes e nem controle sobre as decisões do seu agente (políticos e gestores de recursos públicos). Nesse cenário, os interesses dos agentes se sobrepõem aos interesses da coletividade.
+
+Para diminuir esse conflito de informações, no âmbito do Estado brasileiro foram tomadas diversas medidas legislativas a fim de promover maior transparência dos atos de gestão pública. Essa promoção visa, sobretudo, possibilitar um maior controle dos cidadãos sobre os atos de gestores e representantes, numa relação de prestação de contas com informações transparentes e tempestivas, possibilitando a chamada accountability. Rocha (2011) conceitua a accountability enquanto a avaliação e responsabilização permanente dos agentes públicos, de modo que seja permitido aos cidadãos (principal) exercer certo controle sobre o poder concedido aos seus representantes (agente). Esse controle é exercido, em parte, por meio do acesso a informações, que podem ser ofertadas à população de duas formas. A primeira, denominada transparência ativa, é quando a Administração seleciona e disponibiliza dados à população, independentemente de ter sido provocada. A segunda, denominada transparência passiva, é quando o cidadão solicita informações específicas à Administração, que dentro do menor prazo possível, deverá respondê-la.
+
+A legislação brasileira que trata sobre transparência no setor público buscou assegurar à coletividade o acesso às informações sobre: execuções orçamentárias (Lei n° 9.755/1998); planejamento, controle, responsabilização e transparência, a fim de impor limites e metas aos gestores fiscais (LCP 101/2000 - Lei de Responsabilidade Fiscal); direito à informações de atos e documentações produzidas pelos governos (Lei n° 12.527/2011 - Lei de Acesso à Informação). Mesmo diante desses marcos legais vigentes, estudos produzidos no Brasil apontam para um déficit de accountability nos diferentes níveis governamentais (AKUTSU e PINHO, 2002; CRUZ, 2011; PINHO, 2006; SANTANA JÚNIOR, 2008; PAIVA e ZUCCOLOTTO, 2009; e SILVA, 2017). No entanto, grande parte dessa produção acadêmica tem como foco de análise a transparência ativa e suas respectivas ferramentas de divulgação de dados. Dessa forma, buscando dar melhor análise ao disposto na Lei n° 12.527/2011, este estudo se voltou à análise da transparência passiva, tendo em vista que, ao contrário do que ocorre na transparência ativa, parte da sociedade a seleção dos dados de governo a serem disponibilizados.
+
+Tomando por base estudos acadêmicos e documentos governamentais, este trabalho analisou o resultado da avaliação de uma amostra de municípios goianos, estes, integrantes da amostra analisada pela 3ª edição da Escala Brasil Transparente, promovida pela Controladoria-Geral da União, que quantifica o grau de transparência passiva dos municípios brasileiros. A nota conferida aos municípios é a variável dependente do estudo. As variáveis explicativas foram construídas a partir do levantamento de dados de indicadores socioeconômicos oficiais que reflitam, em certo grau, a realidade dos municípios analisados.
+
+Levantados os dados qualitativos e quantitativos, foi elaborada uma análise estatística dos dados, descrevendo suas principais características a fim de verificar quais aspectos (variáveis explicativas) impactam, para mais ou para menos, a avaliação (nota - variável dependente) de cada município.
+
+### 1.1 Pergunta de pesquisa
+
+Quais aspectos socioeconômicos auxiliam na explicação do índice de transparência passiva atribuído aos municípios goianos pela 3ª edição da Escala Brasil Transparente?
+
+### 1.2 Objetivo Geral
+
+O presente estudo tem como objetivo verificar se há relação entre os aspectos socioeconômicos dos municípios goianos e a sua respectiva avaliação (nota) na 3ª edição da avaliação Escala Brasil Transparente, da Controladoria-Geral da União (CGU).
+
+### 1.3 Objetivos Específicos
+
+_Revisar_ a literatura sobre: teoria da agência; transparência na gestão pública brasileira; accountability; legislações brasileiras que tratam da transparência no setor público;
+
+_Levantar_ os dados de indicadores socioeconômicos municipais para uma amostra de municípios goianos, bem como a avaliação desses municípios pela Escala Brasil Transparente; e
+
+_Analisar_, com uso de ferramenta estatística, se as variáveis independentes levantadas auxiliam na explicação da variável dependente.
+
+### 1.4 Justificativa
+
+Este estudo busca o fomento à pesquisa que trata da transparência passiva na administração pública municipal. Entendemos que o município figura como o círculo da administração pública mais próximo da população, aquele que lida com grande parte das demandas locais. Em larga medida com a alocação de recursos oriundos das outras esferas da Administração, a saber, federal e estadual. Aliado a isso, assumimos o pressuposto trazido por PINHO (2006), de que quanto maior for o desenvolvimento municipal, refletido em seus indicadores socioeconômicos, melhores serão as condições de implementação de boas práticas no sentido de tornar mais transparentes os atos e decisões da gestão pública, atendendo os requisitos de transparência previstos na legislação brasileira, principalmente na Lei de Acesso à Informação.
+
+Apesar de estarem em vigor normas jurídicas que apontam para um marco ideal de responsabilidade fiscal e transparência dos atos públicos, no Brasil há um déficit de accountability na administração pública, principalmente na esfera municipal (PAIVA; ZUCCOLOTTO, 2009). Dispositivos legais como as Leis Complementares n° 101/2000 e n° 131/2009 (Lei de Responsabilidade Fiscal e Lei de Transparência), e a Lei n° 9.755/1998, tornam obrigatória a divulgação de relatórios de prestação de contas sobre uso dos recursos públicos, permitindo à sociedade um parcial controle dos atos governamentais. Paralelamente a isso, o avanço das tecnologias da informação e comunicação, as chamadas TICs, proporcionou considerável aumento no número de pessoas que buscam informações governamentais em portais oficiais de governo a fim de obter retorno do uso dos recursos coletivos, sobretudo sua aplicação. Para esse fim, a chamada “sociedade em rede” (CASTELLS, 1999) demanda, cada vez mais, informações transparentes, tempestivas e relevantes, de modo que os representados sejam inseridos no processo político e seus desdobramentos. 
+
+Diversos códigos internacionais (FMI, OECD, IFAC) consideram a abertura de dados de gestão pública à população uma boa prática a ser amplamente replicada (CRUZ et al., 2011), e apontam para o uso da rede mundial de computadores como o meio de comunicação dotado de maior potencial para a difusão dessa prática.
+
+No Brasil, existem pesquisas que se lançam a estudar a transparência e a oferta de dados municipais sob o prisma das cidades de grande porte, das capitais, e de seleções específicas, representativas de aspectos econômicos (CRUZ et al., 2011), havendo ainda grande potencial para exploração e análise, até que se o tema se consolide de forma consistente em todas as subdivisões territoriais brasileiras. Deste modo, optamos pela investigação a nível estadual, escolhendo o estado de Goiás enquanto objeto de estudo, a fim de contribuir para a expansão deste modelo de pesquisa sob a lógica do desenvolvimento regional, analisando as características dos municípios goianos a partir de suas subdivisões mesorregionais e microrregionais.
+
+Observando a produção acadêmica sobre as aplicações da Lei N° 12.527, a chamada Lei de Acesso à Informação, é possível perceber que foi dada especial atenção à manifestação da transparência ativa (BAIRRAL, SILVA e ALVES, 2015; BERNARDES, SANTOS e ROVER, 2015; CRUZ et al., 2012; FIGUEIREDO e GAZONI, 2016). Porém, esta pesquisa assume o entendimento de Michener, Contreras e Niskier (2018) de que a transparência ativa dá margem ao governo para, além de escolher, “higienizar” as informações que serão ofertadas ao público (MICHENER; BERSCH, 2013, P. 239). Complementarmente, entendem que a transparência passiva faz com que os gestores públicos cumpram exigências maiores ao serem demandados pela população, uma vez que as demandas não são antecipadas, ocorrendo fortuitamente.
+
+Do exposto, o presente estudo visa contribuir para o preenchimento dessa lacuna de estudo e análise sobre a transparência passiva dos municípios brasileiros, verificando se, a exemplo do que ocorre nos trabalhos sobre a transparência ativa dos municípios, fatores socioeconômicos auxiliam na explicação do nível de transparência.
+
+## 2. REFERENCIAL TEÓRICO
+
+### 2.1 Agency Theory, assimetria informacional e accountability
+
+Antes do surgimento das corporações, um cenário de baixa complexidade organizacional vigorava no âmbito empresarial. Esse cenário não trazia grandes implicações para a acumulação de funções inerentes à propriedade e gestão. O aumento dessa complexidade, atrelado diretamente ao surgimento das corporações empresariais, fez emergir uma necessidade de divisão de tarefas de modo a tornar mais eficiente a gestão administrativa, afetando diretamente a assunção de funções de gestão concomitantemente à propriedade da empresa (CRUZ, 2008, p. 27).
+
+A delegação de tarefas tornou-se necessária, de modo que a administração dos recursos fosse entregue a escalões subalternos ao proprietário, partindo do pressuposto de que estes estarão alinhados à interesses corporativos comuns. Porém, avaliações e tomadas de decisões aplicadas por gestores de recursos podem encontrar certo grau de discordância com os interesses da organização, uma vez que cada ação acarretará a aplicação das preferências individuais, estas, originadas na formação e visão de mundo de quem a pratica, refletidas em seus próprios interesses. Como observa Przeworski (2001), O agente atua em função do interesse do principal, mas não descarta seus próprios interesses. Dessa forma, a relação principal-agente respeita a compatibilidade de incentivos, já que o agente somente perseguirá os objetivos de quem o delegou caso possa manter seus próprios interesses (FILGUEIRAS, 2011, p. 69). A discordância existente entre proprietários e gestores delegados, ou seja, entre o principal e seu agente, encontra na Teoria da Agência (Agency Theory) alguns pressupostos e análise de seus fenômenos, analisando a relação contratual que rege essa interação (CRUZ, 2008, p. 27).
+
+Eisenhardt (1989) assinala que a Teoria da Agência foi desenvolvida para resolver dois problemas que surgem da relação entre o principal e o agente, a saber, (1) o conflito entre objetivos e a (2) dificuldade/custos de monitoração das ações do agente. Nesse caso, há divergência de entendimento entre principal e agente quanto ao método e aos esforços depreendidos diante de uma determinada situação (EISENHARDT, 1989, p. 58; CRUZ, 2008, p. 28).
+
+Enquanto marco teórico, a Teoria da Agência é utilizada em larga escala pelas ciências sociais e comportamentais, mas para além da relação organizacional, ela busca dar luz aos fundamentos da sociedade. Apesar de sua gênese residir nas relações contratuais de uma firma, esta, entendida como um conjunto de contratos intercalados e relacionados, alguns contratos existentes podem advir de construções tácitas (CRUZ, 2008, p. 29).
+
+As relações contratuais de que trata a Teoria da Agência foram desenvolvidas a partir do entendimento sobre as premissas da firma. A firma seria um locus onde gestão e decisão sobre alocação de recursos são executadas por autoridades estabelecidas neste próprio locus (COASE, 1937, p. 388). A contraposição desse pensamento veio por intermédio do trabalho de Jensen e Meckling (1976), que refutam que seja a centralidade da autoridade que figure como essência da firma, mas as relações internas e externas de contrato existentes. Nesse contexto, a firma é um conjunto de contratos estabelecidos a partir de seus próprios interesses (FAMA, 1980, p. 289).
+
+Slomski (2005) traz o entendimento de que o contrato consiste em um acordo pelo qual agente e principal estabelecem obrigações mútuas. São regras que definem e norteiam as relações. Essas regras visam mitigar as dificuldades de tomada de decisões concomitantes, oportunismos entre as partes e incertezas da atividade central da firma (SIFFERT FILHO, 1996, p. 104).
+
+Na definição de Jensen e Meckling (1976), a relação de agência consiste em
+
+um contrato pelo qual uma ou mais pessoas (o principal) contrata outra pessoa (o agente) para executar algum serviço em seu nome, envolvendo a delegação de alguma autoridade para tomada de decisão ao agente. Se ambas as partes da relação são maximizadores de utilidade, há boas razões para acreditar que o agente nem sempre agirá conforme os melhores interesses do principal (CRUZ, 2008, p. 30).
+
+Cruz (2008) identifica dois requisitos a serem compreendidos a partir da definição de Jensen e Meckling (1976), a saber, (1) delegação de poder de decisão ao agente e (2) interesses distintos entre principal e agente, uma vez que ambos tendem a maximizar a utilidade de seus atos de maneira independente. Esse contexto traz à tona o início dos conflitos numa relação de agência, pois no momento que um agente assume uma decisão em detrimento do interesse do principal, surge a possibilidade de oportunismo administrativo, que consiste na ação desleal ao interesse do principal. Duas premissas da relação de agência permitem que isso aconteça: inexistência de agentes perfeitos, e impossibilidade de limitação e monitoramento de ações (SLOMSKI et. al. 2008, p. 33; CRUZ, 2008, p. 30).
+
+Lambright (2008), baseando-se nos que o precederam, enumera o que considera serem os principais pressupostos da Teoria da Agência: (a) as relações entre agente e principal são regidas por recompensas e objetivos pessoais; (b) a origem do problema da agência têm origem no conflito entre as partes e quando há alto custo de monitoramento do agente; (c) por dispor de racionalidade limitada, o agente pode agir de forma oportunista, desleal e desonesta na realização de transações; e (d) os conceitos de seleção adversa e risco moral podem auxiliar na compreensão dos problemas que emergem da relação de agência (LAMBRIGHT, 2008, p. 209).
+
+Nossa, Kassai e Kassai (2000) concebem que o conflito de interesses entre principal e agente são reflexo da divergência de tomadas de decisões. O principal, por estar impossibilitado de monitorar todas as ações do agente de modo a certificar-se de seu alinhamento, encontra-se em situação de assimetria quanto ao agente, não dispondo de informação suficiente para uma correta leitura de suas motivações. Essa assimetria é restringida, limitada ou interrompida por motivos conhecidos somente pelo agente (CRUZ, 2008, p. 33).
+
+O agente, enquanto gestor de recursos e dotado de informações cujas demais partes interessadas não dispõem, acaba por subtrair destas partes algumas prerrogativas, uma vez que eles não estão diretamente ligados à gestão dos recursos dos quais são proprietários (SLOMSKI et. al., 2008, p. 36). Cruz (2008) exemplifica esse cenário citando a situação organizacional onde administradores têm maiores informações sobre setores e assuntos estratégicos do que os demais integrantes da organização. Nesse contexto, informações de áreas como competitividade, oportunidades, riscos e custos estariam disponíveis apenas a um círculo restrito de integrantes (agentes).
+
+Considerando as divergências e conflitos que surgem da relação de agência, depreende-se que, para além da impossibilidade de controle das ações do agente, a assimetria informacional decorre também do conflito de interesses entre as partes. Ao ser dotado de poder decisório sobre propriedade alheia, o agente desenvolve seus próprios interesses sobre a agenda organizacional. Ao tomar decisões, o agente pode optar por aquelas que o mantém na posição de agente, mesmo que em detrimento do interesse do principal. Segundo esse entendimento, sempre que avaliado, o agente tenderá a favorecer seus próprios interesses (CRUZ, 2008, p. 34). A essa situação, diretamente atrelada à assimetria informacional, foi tratada por Jensen e Meckling (1976) sob a perspectiva de dois problemas estabelecidos: risco moral e seleção adversa.
+
+Lambright (2008) define o risco de seleção adversa como a situação onde o agente dispõe de informação relevante para a organização, sem que o principal a tenha. Ao usar essa informação, o agente a potencializará de modo que a decisão tomada a partir dela interaja com seu interesse. Supondo que esse cenário hipotético ocorra, o principal não tem ferramentas para saber se o processo decisório contemplou o seu interesse ou o de seu agente. Existe, aqui, uma lacuna informacional. Cruz (2008), ao se debruçar sobre o risco moral trazido por Jensen e Meckling (1976), utiliza o termo “ação oculta” para definir a situação hipotética onde o agente procede de forma moral ou imoral, aproveitando-se da dificuldade que o principal tem de avaliar todas as suas ações (CRUZ, 2008, p. 35).
+
+Esse entendimento se alinha com os momentos críticos numa relação de agência delineados por Martinez (1998), segundo o qual deve haver uma constante necessidade de estruturação de uma relação contratual entre o principal e o agente, de modo que as ações deste último sejam sempre em defesa dos interesses do principal. Para isso, torna-se necessário um mecanismo de acompanhamento do desempenho do agente, evitando a ocultação de ativos (informações) relevantes ao principal. Ao mensurar o desempenho do agente, o Principal cria uma forma de verificar se os esforços envidados rumam em direção aos seus interesses. Tudo isso deve ocorrer, segundo essa idealização, de modo a evitar futuros embates, em caso de rompimento contratual (MARTINEZ, 1998, p. 77).
+
+De forma resumida, as características da Teoria da Agência foram bem explicadas pela adaptação dos pressupostos de Eisenhardt (1989) feita por Cruz (2010), conforme se segue.
+
+Para além das implicações que a Teoria da Agência destaca no âmbito das organizações privadas, suas premissas são compatíveis e aplicáveis ao observar a dinâmica de interação no âmbito do setor público. Nesse contexto, a relação que se dá entre principal e agente, reside na figura do Estado (seus gestores) a agência em nome e benefício dos principais (cidadãos contribuintes).
+
+Rousseau (1996), no clássico Do Contrato Social, traz que a necessidade de surgimento do Estado está diretamente vinculada à defesa e proteção das pessoas, dos associados. Os aderentes (cidadãos), de forma tácita e livre, renunciam a direitos e liberdades em nome do Estado, que por sua vez, tem sua existência calcada na prerrogativa de promoção do bem comum da coletividade (ROUSSEAU, 1996, p. 20).
+
+Para atingir seus fins de bem-estar comum, o Estado exerce, por meio do poder político-governamental, a gestão da coisa pública, esta, sempre calcada pelos princípios legais, de modo que sejam envidados esforços que resultem no bem coletivo (SANTANA JÚNIOR, 2008, p. 12). Santana Júnior (2008) salienta, ainda, que a receita estatal, por residir na contribuição compulsória de recursos dos cidadãos, gera a obrigação de entrega de serviços de forma eficiente, eficaz e efetiva. A partir disso, de modo análogo ao que ocorre numa organização privada, a mesma disputa pela diminuição dos conflitos informacionais ocorrem no âmbito do setor público, em diferentes níveis (HEALD, 2003, p. 750). Os cidadãos (principal), proprietários dos recursos públicos, não conseguem monitorar as ações de seus agentes (gestores públicos). Os agentes públicos, por sua vez, detêm muito mais informação sobre a aplicação desses recursos. Assim como na firma, dessa relação incorrem três premissas, as quais foram levantadas por Siffert Filho (1996 apud Slomki et. al., 2008, p. 133), a saber, (1) adoção de diferentes comportamentos; (2) partes afetadas pelas ações; e (3) ações não-observáveis pelo principal (cidadão).
+
+Admitindo a existência de assimetria de informação entre agente e principal também no setor público, Slomski et al. (2008, p. 133) traça a necessidade de se avaliar as ações do gestor público, a fim de evitar que haja conflito entre seu interesse e o dos cidadãos.
+
+A seguir, uma ilustração que destaca a assimetria informacional resultante do escalonamento de agenciamento no âmbito do setor público municipal, demonstrando que além de carecer das informações produzidas em número massivo pelos agentes, o cidadão dificilmente terá alcance, em tempo hábil, de todas os processos necessários para o atendimento de suas demandas.
+
+Aplicando os preceitos do agenciamento para compreender as relações no âmbito do Estado, Przeworski (2003) identificou três diferentes formas de relação constantemente percebidas no setor público, a saber, (1) entre o Estado e os agentes econômicos privados; (2) entre cidadãos e políticos, e (3) entre os políticos e a burocracia da máquina pública. Ocorre, então, um cenário de tensão envolvendo delegação de tarefas, controle político e prestação responsável de contas à sociedade civil, que em última instância, figura como principal beneficiário das decisões advindas do setor público (OLIVEIRA, 2007, p. 601).
+
+Atendo-nos ao foco da pesquisa, que se debruça sobre a prestação de informações de gestão pública aos cidadãos, o segundo preceito salientado por Przeworski (2003), a relação principal-agente entre os cidadãos e políticos/gestores, é possível seguir o entendimento de que há um constante processo de “avaliação e responsabilização permanente dos agentes públicos que permitam ao cidadão controlar o exercício do poder concedido aos seus representantes” (ROCHA, 2011, p. 84). Esse processo, nas palavras de Rocha (2011), se traduz na accountability. Apesar da imprecisão que a tradução dessa palavra produz, alguns estudiosos tentam traduzi-la no contexto da administração brasileira.
+
+A maior parte da literatura apresenta três concepções de accountability, a saber: o vertical, o horizontal e o societal. O accountability vertical ocorre por meio do controle social, este, podendo se traduzir no voto, uma típica ação entre desiguais. Essa forma de controle parte da “transparência das gestões em relação aos eleitores que podem, assim, fiscalizá-las e puni-las, principalmente através do voto em eleições livres e justas” (FÊU, 2003, p .5). Por accountability horizontal entende-se aquela que emerge da mútua fiscalização, do controle de atos entre os Poderes da República. Utilizam-se dessa forma de accountability os tribunais e controladorias, assim como agências reguladoras e fiscalizadoras. Em suma, é a ação entre os atores competentes para fiscalizar e punir no seio da própria estrutura do Estado (FÊU, 2003, p.5). Por accountability social - ou societal - entende-se aquele exercido pela sociedade civil organizada, como órgãos não-governamentais, imprensa, representações de classes trabalhadoras, entre outras que, no ato de fiscalização, denunciam excessos e transgressões, cobrando responsabilização (FÊU, 2003, p.5).
+
+Pinho e Sacramento (2009), prosseguindo os estudos de Campos (1990), indica que a accountability está relacionada à responsabilidade de um indivíduo em relação ao outro. Em suas palavras, 
+
+responsabilidade, a obrigação e a responsabilização de quem ocupa um cargo em prestar contas segundo os parâmetros da lei, estando envolvida a possibilidade de ônus, o que seria uma pena para o não cumprimento dessa diretiva (PINHO; SACRAMENTO, 2009, p. 1348).
+
+Mediante essa responsabilização, Filgueiras (2011) destaca que a accountability é um pressuposto próprio dos Estados liberais. Neles, a ordem político-democrática se consolida a partir da responsabilização dos agentes públicos ante os cidadãos. Dessa forma, a accountability é o exercício da autoridade de acordo com a legalidade da ação do Estado na sociedade. Para isso, os setores de governo possuem a tarefa de viabilizar mecanismos que permitam à sociedade certo grau de controle sobre as decisões do próprio governante (FILGUEIRAS, 2011, p. 67).
+
+Movidos a incentivos, os atores envolvidos na relação de agência ficam reféns de incertezas. Enquanto o agente não sabe se haverá recompensa satisfatória caso proceda bem, entenda-se “bem” enquanto alinhado com o interesse do principal, este último, por sua vez, possui pouca margem de decisão, dada a assimetria informacional. Há, aqui, uma relação positiva entre assimetria da informação e custos de delegação. A questão da informação assume centralidade quando analisada a relação agente-principal, e sob a ótica do setor público, requer que o Estado abra sua razão para que o principal, manifestado no exercício da cidadania, tome conhecimento do que lhe é de interesse (FILGUEIRAS, 2011, p. 68).
+
+Em meio às propostas de reformas liberais, o conceito de accountability acabou por ser compreendido como prestação de contas. Przeworski (2001) destaca que existe um caráter normativo que vai além desse conceito, sendo o papel do Estado fazer, de fato, aquilo que deve ser feito. Assim, a accountability consiste num processo político e democrático, onde há o exercício da autoridade que parte dos cidadãos para o Estado. Esse cenário tem como pano de fundo o fortalecimento de uma ideia de democracia, onde a accountability é um princípio normativo, e a execução desse conceito, de forma prática, se dá no âmbito das instituições políticas e dos cidadãos (FILGUEIRAS, 2011, p. 71).
+
+Visando mitigar a assimetria de informação entre agente e principal, o estabelecimento da accountability deve ser considerada a partir de aspectos suscitados por Przeworski (2001), a saber:
+
+(1) os eleitores devem poder saber a quem atribuir de fato responsabilidade pelo desempenho do governo; (2) os eleitores devem poder votar para destituir do governo os partidos responsáveis por mau desempenho; (3) os políticos devem ter incentivos para querer ser reeleitos; (4) os eleitores devem dispor de instrumentos institucionais para recompensar e punir os governos pelos resultados que produzem em diferentes domínios (Przeworski, 2001, p. 63).
+
+Os aspectos abordados por Przeworski partem do entendimento de uma democracia representativa, idealizada num conjunto de mecanismos que dotam o principal de informação ao ponto de trocar, ou demitir, seus agentes. Dito isso, vigora como fundamental para uma boa prática de accountability a abertura dos segredos de Estado por intermédio do fomento à transparência pública. O segredo favorece interesses pessoais nos espaços de poder público, desencorajando a participação do público nos círculos decisórios, limitando o exercício de sua autoridade (FILGUEIRAS, 2011, p. 71).
+
+O cenário de segredo no setor público colocou a transparência dos atos de gestores em uma posição importante no debate sobre a definição de accountability. Stiglitz (1999) significa transparência enquanto ferramenta de redução de assimetrias informacionais entre cidadãos e agentes públicos, corroborando para a redução de falhas e, ao mesmo tempo, permitindo maior controle sobre atos do setor público (FILGUEIRAS, 2011, p. 73).
+
+Roumeem Islam (2003), em seu artigo Do more transparent governments govern better? (“Governos mais transparentes governam melhor?” - tradução livre), conclui que governos mais transparentes tendem a governar com maior tranquilidade, pois a ampliação da informação propicia um mercado político menos corrupto, trazendo eficiência ao setor público (ISLAM, 2003, p. 35). Diante disso, a transparência pública figura como uma ferramenta auxiliar de controle do principal sobre os atos de gestão do agente. Ferejohn (1999) lança o ponto de vista onde o cidadão é tido como um investidor e consumidor de bens públicos. Segundo sua reflexão, o principal investe na ação do agente, esperando o retorno na forma de serviços e bens públicos. Essa relação se equilibra na medida em que o principal tem uma considerável redução de incertezas a partir da transparência dos atos do agente. Nesse contexto, a accountability se aprimora na medida em que a transparência aumenta. A transparência dos atos maximiza o controle do principal sobre o agente, por meio da redução da assimetria informacional, garantindo um sistema de responsabilização por meio da quebra dos segredos do Estado (FILGUEIRAS, 2011, p. 73).
+
+### 2.2 Transparência no setor público brasileiro: o caminho até a LAI
+
+Da análise da legislação brasileira que trata sobre transparência no setor público, é possível perceber que, da promulgação da Constituição da República Federativa do Brasil (1988) até o marco que representou a Lei de Acesso à Informação (Lei 12.527/2011), foi trilhado um caminho ascendente. A princípio, a legislação atentou para informações sobre execução orçamentária, tendo na figura do Tribunal de Contas da União seu primeiro sujeito relevante. Em seguida, deu um grande passo rumo à responsabilização fiscal de gestores e representantes, para então adquirir caráter mais abrangente, materializado pela LAI, conceituando e definindo os níveis de transparência requerido ao Estado brasileiro.
+
+A Constituição Federal, em seu artigo 37, dispõe sobre os princípios que devem reger os entes públicos, a saber, (a) legalidade; (b) impessoalidade; (c) moralidade; (d) publicidade; e (e) eficiência (BRASIL, 1988). Cruz (2011) e Filgueiras (2011) observam que esses princípios pressupõem a necessidade, no âmbito do setor público, de uma política de publicidade dos atos de gestão. Dessa forma, a transparência deve respeitar as peculiaridades da sociedade em sua completude, se revertendo em ferramentas de simples compreensão e acessibilidade (CRUZ, 2011, p. 18; FILGUEIRAS, 2011, p. 73).
+
+Nesse sentido, abordaremos a evolução da legislação que trata das principais mudanças ocorridas no Brasil, a fim que o setor público espelhasse as premissas e boas práticas extraídas do entendimento constituinte marcado no Art. 37 da CF/88.
+
+_Contas Públicas_
+
+Atendendo a esse princípio, foi sancionada pelo então presidente Fernando Henrique Cardoso a Lei n° 9.755, de 16 de dezembro de 1998, que “dispõe sobre a criação de "homepage" na "Internet", pelo Tribunal de Contas da União, para divulgação dos dados e informações que especifica, e dá outras providências” (BRASIL, 1998).
+
+A Lei requer que o TCU se utilize de plataforma digital na internet, de modo a dar publicidade a importantes aspectos das contas públicas, a saber:
+
+●	Tributos arrecadados;
+●	Relatório de execução orçamentária (União, Estados, Municípios, e Distrito Federal);
+●	Balanço das contas públicas (União, Estados, Municípios, e Distrito Federal);
+●	Orçamentos diretamente subordinados (União, Estados, Municípios, e Distrito Federal); e
+●	Relatório de compras públicas (administração direta e indireta).
+
+Dessa forma, adentrou no setor público brasileiro uma iniciativa inovadora, a fim de dar visibilidade aos gastos públicos e centralizando, no TCU, a responsabilidade de divulgação. Embora a finalidade dessa regra se relacione diretamente com os pressupostos de transparência atualmente conhecidos, no texto da lei não há qualquer menção direta à sua implementação. Fica marcado, também, o uso do meio eletrônico como ferramenta de divulgação, procedimento que viria a figurar como objeto de legislação específica posteriormente, mais especificamente na demarcação da transparência ativa, marcando a iniciativa do Estado na divulgação de informações à sociedade.
+
+_Responsabilidade Fiscal_
+
+Doze anos depois, a Lei Complementar n° 101, de 4 de maio de 2000 (Lei de Responsabilidade Fiscal - LRF) surgiu em um contexto de imposição de limites e metas aos gestores fiscais. Este contexto abrangia grandes déficits fiscais e acúmulo desenfreado de dívida pública nos três níveis de governo, motivos estes que estabeleceram a disciplina fiscal e a transparência na execução do orçamento enquanto principais pontos de regulamentação (LINHARES; SIMONASSI; NOJOSA, 2012, p. 742).
+
+Analisada à miúde, a LRF apresenta quatro pilares de sustentação: planejamento, controle, responsabilidade e transparência. O último pilar corta transversalmente a proposta da legislação, e a ele foi reservado espaço no art. 48, que integra o Capítulo IX, que trata da transparência da gestão. Nele ficam definidos os instrumentos de transparência da gestão fiscal, aos quais serão dadas ampla divulgação e publicidade, incluídos os meios eletrônicos, a saber:
+
+●	Planos, orçamentos e leis de diretrizes orçamentárias; 
+●	Prestações de contas e o respectivo parecer prévio;
+●	Relatório Resumido da Execução Orçamentária;
+Relatório de Gestão Fiscal; e
+●	Versões simplificadas desses documentos.
+
+O mesmo artigo assegura, no parágrafo 1°, que a transparência tem ainda objetivos no tocante ao:
+
+I – incentivo à participação popular e realização de audiências públicas, durante os processos de elaboração e discussão dos planos, lei de diretrizes orçamentárias e orçamentos; II - liberação ao pleno conhecimento e acompanhamento da sociedade, em tempo real, de informações pormenorizadas sobre a execução orçamentária e financeira, em meios eletrônicos de acesso público; e III – adoção de sistema integrado de administração financeira e controle, que atenda a padrão mínimo de qualidade estabelecido pelo Poder Executivo da União e ao disposto no art. 48 (BRASIL, 2000, art. 48).
+
+Complementando esse dispositivo, a Lei Complementar nº 131/2009 (Lei de Transparência) acrescenta a obrigatoriedade de apresentação de informações, em tempo real, de dados pormenorizados sobre relatórios contábeis, orçamentários, fiscais e de execução financeira da União, dos Estados, do Distrito Federal e dos Municípios. Essas informações deverão constar de plataforma eletrônica, disponível a qualquer cidadão. Essa disponibilidade em meio digital está alinhada aos ditames da chamada democracia digital, que utiliza dos meios de tecnologias da informação e comunicação enquanto ferramenta para promoção de accountability e participação social, características claras de uma sociedade cada vez mais conectada, ou nas palavras de Manuel Castells (1998), de uma “sociedade em rede”.
+
+_Acesso à Informação_
+
+Os chamados “estados proativos” possuem como característica a existência de leis que invistam no acesso à informação pública, privilegiando, dessa forma, a transparência dos atos públicos e a respectiva responsabilização, de modo que o cidadão acesse o resultado das decisões de governo (SÁNCHEZ, 2002, p. 164).
+
+Segundo Platt Neto et. al. (2007, p. 77), “mais do que garantir o atendimento das normas legais, as iniciativas de transparência na administração pública constituem uma política de gestão que favorece o exercício da cidadania”. E dentro dessa lógica, em 18 de novembro de 2011 a então presidente Dilma Rousseff sancionou a Lei n° 12.527, popularmente conhecida como Lei de Acesso à Informação (LAI), dispondo sobre observações ao texto constitucional. A primeira modificação se refere ao inciso XXXIII do art. 5°, que compõe o Título que trata dos direitos e garantias individuais, reservando à obtenção de informações o enquadramento enquanto direito e dever reservado às pessoas e coletivos. A segunda modificação se dá no inciso II do § 3º do art. 37, que compõe o Capítulo que trata da administração pública, resguardando à população o acesso aos atos do governo. Por fim, a terceira alteração se dá no § 2º do art. 216, que atribui à Administração a gestão da documentação produzida pelo governo, bem como o acesso a quem dela necessitar.
+
+A Lei, em seu art. 3°, trata de conceituar terminologias afeitas à temática da documentação e informação, estas, entendidas como um ativo de uso governamental. A finalidade é orientar aqueles demandantes que, porventura, sejam alheios aos conceitos básicos da ciência da informação, conforme se segue.
+
+I -  informação - dados, processados ou não, que podem ser utilizados para produção e transmissão de conhecimento, contidos em qualquer meio, suporte ou formato;
+II - dados processados - dados submetidos a qualquer operação ou tratamento por meio de processamento eletrônico ou por meio automatizado com o emprego de tecnologia da informação;
+III - documento - unidade de registro de informações, qualquer que seja o suporte ou formato;
+IV - informação sigilosa - informação submetida temporariamente à restrição de acesso público em razão de sua imprescindibilidade para a segurança da sociedade e do Estado, e aquelas abrangidas pelas demais hipóteses legais de sigilo;
+V - informação pessoal - informação relacionada à pessoa natural identificada ou identificável, relativa à intimidade, vida privada, honra e imagem;
+VI - tratamento da informação - conjunto de ações referentes à produção, recepção, classificação, utilização, acesso, reprodução, transporte, transmissão, distribuição, arquivamento, armazenamento, eliminação, avaliação, destinação ou controle da informação;
+VII - disponibilidade - qualidade da informação que pode ser conhecida e utilizada por indivíduos, equipamentos ou sistemas autorizados;
+VIII - autenticidade - qualidade da informação que tenha sido produzida, expedida, recebida ou modificada por determinado indivíduo, equipamento ou sistema;
+IX - integridade - qualidade da informação não modificada, inclusive quanto à origem, trânsito e destino;
+X - primariedade - qualidade da informação coletada na fonte, com o máximo de detalhamento possível, sem modificações;
+XI - informação atualizada - informação que reúne os dados mais recentes sobre o tema, de acordo com sua natureza, com os prazos previstos em normas específicas ou conforme a periodicidade estabelecida nos sistemas informatizados que a organizam; e
+XII - documento preparatório - documento formal utilizado como fundamento da tomada de decisão ou de ato administrativo, a exemplo de pareceres e notas técnicas. (BRASIL, 2012, art. 3°)
+
+O Capítulo III, em seu art. 7°, trata da denominada Transparência Ativa. Esse entendimento assinala que é obrigação dos órgãos e entidades governamentais promover a oferta de informações de interesse da sociedade, independentemente da existência de requerimento para tal. A CGU definiu didaticamente os conceitos de transparência ativa e passiva. Segundo ela, (CGU, 2013, p. 14) a transparência ativa é “a iniciativa do órgão público de dar divulgação à informações de interesse geral ou coletivo, ainda que não tenha sido expressamente solicitada”. Esse caso é marcado pela iniciativa do órgão público em avaliar e divulgar informação que ele próprio julga de interesse da população, bem como os definidos obrigatórios por lei.
+
+De iniciativa do gestor público, ficam asseguradas à população, ainda que minimamente, as seguintes informações nas homepages governamentais:
+
+I - estrutura organizacional, competências, legislação aplicável, principais cargos e seus ocupantes, endereço e telefones das unidades, horários de atendimento ao público; II -  programas, projetos, ações, obras e atividades, com indicação da unidade responsável, principais metas e resultados e, quando existentes, indicadores de resultado e impacto; III - repasses ou transferências de recursos financeiros; IV - execução orçamentária e financeira detalhada; V - licitações realizadas e em andamento, com editais, anexos e resultados, além dos contratos firmados e notas de empenho emitidas; VI - remuneração e subsídio recebidos por ocupante de cargo, posto, graduação, função e emprego público, incluídos os auxílios, as ajudas de custo, os jetons e outras vantagens pecuniárias, além dos proventos de aposentadoria e das pensões daqueles servidores e empregados públicos que estiverem na ativa, de maneira individualizada, conforme estabelecido em ato do Ministro de Estado da Economia; VII - respostas a perguntas mais frequentes da sociedade; VIII - contato da autoridade de monitoramento, designada nos termos do art. 40 da Lei nº 12.527, de 2011, e telefone e correio eletrônico do Serviço de Informações ao Cidadão - SIC; e IX - programas financiados pelo Fundo de Amparo ao Trabalhador - FAT. (BRASIL, 2012, art. 7)
+
+Santana Júnior (2008, p. 69), corrobora a ideia de disponibilização de informações a partir de meios eletrônicos trazida pela Lei, uma vez que a rede mundial de computadores facilita a agilidade na prestação de informações públicas tempestivas.
+
+O Capítulo IV trata da outra modalidade de transparência das informações, a Transparência Passiva. Ela se distingue da Transparência Ativa por residir na figura do cidadão, ou de entes associativos privados, a iniciativa pelo acesso à informação. Se na transparência ativa o gestor público oferta o dado ainda que não haja solicitação, na transparência passiva o gestor concederá acesso à informação conforme for demandado, atendendo às restrições impostas pelos graus de classificação de sigilo que dispõe a Lei.
+
+Quanto à forma de acesso, ambas modalidades diferem. Se na transparência ativa reside fundamentalmente o uso da internet e de homepages como forma de acesso às informações, na transparência passiva a Lei determina a existência de um Serviço de Informação ao Cidadão. O SIC prevê atendimento ao público, composto por atendimento pessoal, informacional e recebimento de pedidos. Sua localização deverá ser identificada e de fácil acesso, sempre aberta ao público (BRASIL, 2012, art. 10). Sempre que possível, a informação deverá ser concedida de imediato, e na impossibilidade, compete ao gestor do SIC protocolar e encaminhar a solicitação, respeitados os prazos legais.
+Silva (2017) apresenta um quadro-resumo das principais características que distinguem os tipos de transparência tratados na Lei.
+
+Este estudo, como já mencionado e a ser demonstrado na próxima seção, se aterá aos requisitos da Transparência Passiva de que trata a legislação, estes, presentes na avaliação que compõe a Escala Brasil transparente, da CGU, em sua 3ª Edição. 
+
+### 2.3 Avaliação da Transparência municipal: Escala Brasil Transparente
+
+A CGU deu início, no ano de 2015, à primeira edição da metodologia chamada Escala Brasil Transparente (EBT) com vistas a medir a escala de transparência passiva dos municípios brasileiros. Sua finalidade consiste no fornecimento de subsídios ao Ministério da Transparência, agindo dentro do que prevê o art. 59 da Lei Complementar nº 101/2000, o art. 41 da Lei de Acesso à Informação, e os artigos 68, 69 e 70 do Decreto nº 7.724/2012, que lhe dão competência para verificar a aplicação, o fomento e a avaliação da prática de transparência pelos municípios.
+
+Desde sua criação, a CGU realizou três edições da EBT, a saber: 1ª e 2ª Ed., ambas em 2015; e a 3ª Ed. em 2016. A terceira edição contou com duas revisões, sendo a primeira de 29/08/2015 a 07/10/2016 e a segunda em 10/10/2016 a 16/01/2017, quando seus dados finais finalizados e publicados (CGU, 2017). 
+
+A EBT avalia o grau de cumprimento dos dispositivos da LAI, concentrando-se na transparência passiva, sendo realizados pedidos reais de acesso à informação pelos canais de acesso ao cidadão (SIC). Com isso, a CGU tem como finalidade aprofundar o monitoramento das ações de gestores municipais, possibilitando o acompanhamento da aplicação do direito à informação (CGU, 2015).
+
+A avaliação é composta por um check-list que contempla doze quesitos, estes, alinhados com a regulamentação da LAI e a existência de um SIC, conforme se segue (CGU, 2015):
+
+I - Regulamentação da Lei de Acesso:
+●	 Exposição da legislação no site do avaliado;
+●	 Existência da regulamentação;
+●	 Regulamentação do SIC;
+●	 Regulamentação da classificação de sigilo;
+●	 Regulamentação da responsabilização do servidor;
+●	 Regulamentação de instâncias recursais.
+II - Transparência passiva:
+●	 Divulgação do SIC físico (atendimento presencial);
+●	 Existência de um e-SIC (atendimento pela internet);
+●	 Possibilidade de acompanhamento do pedido de acesso;
+●	 Inexistência de pontos que dificultem ou inviabilizem o pedido de acesso;
+●	 Respostas aos pedidos no prazo legal;
+●	 Respostas em conformidade com o que foi solicitado.
+
+A imagem abaixo ilustra os quesitos mencionados, aos quais são atribuídos apenas dois tipos de resposta, “SIM” e “NÃO”, excetuando-se os casos de sites que porventura estejam fora do ar.
+
+Esta pesquisa se inclinará sobre a 3ª Edição da EBT, ocorrida entre 27 JUN 2016 e 26 AGO 16, avaliando uma amostra de 2.328 municípios brasileiros. Além dos municípios, a EBT avaliou também o cumprimento das obrigações impostas pela LAI pelos estados. O resultado da evolução do grau de transparência passiva dos estados pode ser observado pela imagem abaixo, que contempla as três edições em perspectiva comparada.
+
+É possível perceber um crescente aumento nos índices dos estados, tendo nos estados do centro-oeste a maior evolução. Entre os 25 estados que integram o intervalo máximo de avaliação, de 8 a 10, 12 foram avaliados com nota máxima (AL, BA, CE, DF, ES, MA, MS, PE, RS, RO, SP, TO). O estado do Amapá, que na primeira avaliação tinha a companhia do Rio Grande do Norte na última avaliação, ostenta a pior avaliação das três edições, permanecendo com nota zero.
+
+A amostra municipal total, considerando os 5.570 municípios brasileiros, ficou definida em 2.328 municípios. O maior intervalo de distribuição de notas é aquele dos avaliados entre 1 e 2,99 pontos, contabilizando 722 municípios, representando 31% da amostra. O intervalo de menção máxima, entre 9 e 10 pontos, figura como a segunda menor distribuição, com 209 municípios, representando 9% da amostra. Dessas 209 observações, 76 alcançaram a pontuação máxima.
+
+Entre as 27 capitais, 40% (11 cidades) dos municípios alcançou a menção máxima, enquanto apenas 2 foram avaliados com grau abaixo de 5, a saber, Aracajú-SE (3,47) e Florianópolis-SC (2,08), conforme demonstra a imagem abaixo.
+
+O estado de Goiás, objeto dessa pesquisa, teve 103 cidades avaliadas na 3ª Edição da EBT. Segundo a 3ª avaliação da EBT, considerando os vinte e seis estados da federação e o Distrito Federal, o estado de Goiás figura na 15ª colocação, com 9,58 pontos, apresentando uma variação negativa de 0,14 pontos em relação à 2ª avaliação. Mesmo estando apenas a 0,42 pontos da pontuação máxima, o índice estadual não se reflete ao observarmos os índices municipais separadamente. A capital, Goiânia, que figurou como 290º no ranking da amostra nacional, ficou em segundo lugar considerando a amostra de municípios goianos. Entre as demais capitais, Goiânia ocupa a 17ª colocação, com 7,91 pontos. Considerando todos os municípios brasileiros, nenhum município goiano logrou pontuação máxima (10,00), sendo o município de Caiapônia o melhor colocado, na 250ª posição, com 8,33 pontos. O quadro-geral do estado de Goiás percebe a seguinte divisão quando observados os intervalos da pontuação por número de municípios:
+
+A imagem ainda permite visualizar que 81% dos municípios goianos foram avaliados com menção abaixo de cinco, restando apenas 19% acima da média, dos quais menos de 1% da amostra atingiu o intervalo máximo de pontuação.
+
+Essa análise corrobora o objetivo desta pesquisa de identificar se o perfil socioeconômico dos municípios goianos são indicadores significativos para explicar o baixo grau recebido na 3ª avaliação EBT.
+
+## 3. METODOLOGIA
+
+### 3.1 Do método da pesquisa
+
+_Quanto ao tipo_
+
+A pesquisa se classifica como analítica ou exploratória, por objetivar uma maior compreensão do problema levantado por meio da análise de fenômenos e dados oriundos da observação (GIL, 2002, p. 41). Para além da compreensão dos dados em si, objetiva-se também analisá-los em suas interações, de modo a verificar a existência, ou não, de uma correlação entre eles.
+
+Objetivamente, a pesquisa visa lançar luz “sobre um assunto já conhecido, visto sob nova perspectiva, e que servirá como base para pesquisas posteriores” (CASARIN; CASARIN, 2012, p. 40), lançando sobre o tema relevante reflexão, de modo a observar como se manifestam os fenômenos advindos das decisões políticas com impacto socioeconômico, sob a ótica da transparência passiva da gestão municipal.
+
+Adotou-se método descritivo para as características inerentes ao objeto de observação, a saber, os municípios goianos. Mais precisamente, buscou-se descrever a avaliação do grau de transparência do município por órgão do governo e seu perfil socioeconômico, este, expresso por indicadores diversos.
+
+Utilizou-se, ainda, técnicas de revisão bibliográfica, análise de conteúdos presentes em bases de dados eletrônicas, análise de fontes primárias, principalmente leis e normas correlatas à transparência no setor público, e métodos estatísticos de tabulação e análise de dados.
+
+_Quanto ao processo_
+
+A pesquisa faz uso de uma abordagem quantitativa, pois foca na mensuração de fenômenos e resultados. As informações são de natureza numérica, as quais serão classificadas, ordenadas e medidas, de modo que seja possível estabelecer certo grau de associação entre os dados apresentados (VIEIRA, 2009, p. 5).
+
+Buscou-se, ainda, uma análise estatística dos dados, com foco na objetividade, utilizando modelos matemáticos e estatísticos a fim de correlacionar variáveis quantificáveis (CASARIN; CASARIN, 2012, p. 37).
+
+_Quanto à lógica de investigação_
+
+A pesquisa se classifica como hipotético-dedutiva, pois parte de uma combinação de observações a fim de identificar a existência de uma relação de causa e efeito entre elas (GIL, 2008, p. 12).
+
+As informações extraídas a partir do objeto da pesquisa, a saber, a influência do perfil socioeconômico dos municípios goianos sobre seu grau de transparência passiva, objetiva contribuir para a explicação do fenômeno a partir de conjecturas e hipóteses, as quais serão submetidas a teste de falseamento, a fim de se lograr um resultado que contribua, mesmo que provisoriamente, para o debate acadêmico (KAPLAN, 1972, p. 12).
+
+### 3.2 Da população e amostra
+
+_População_
+
+A população considerada na pesquisa consiste nos 103 municípios do estado de Goiás avaliados pela 3ª edição da Escala Brasil Transparente. Entre os 103 municípios, estão incluídos os que participaram da 1ª e 2ª edição da EBT, na condição de reavaliados, distribuídos por:
+
+a. Mesorregião
+
+b. Microrregião
+
+_Amostra_
+
+Para o plano amostral da 3ª edição da aplicação da EBT, foram avaliados 2.355 entes federativos, dos quais 2.301 são municípios, as 27 capitais, os 26 estados mais o Distrito Federal (CGU, 2017).
+
+Adotou-se uma amostragem probabilística, de modo a permitir uma generalização de resultados (EBT, 2017).
+
+Quanto ao método de amostragem, optou-se por uma Amostra Aleatória Estratificada com definição de proporções. O universo amostral ficou dividido em partes, de modo que cada parte do universo tenha sua representação garantida na amostra.
+
+Os estratos definidos foram os estados da federação (26 estados), dentro dos quais houve uma subdivisão por porte populacional, considerando valores publicados pelo IBGE em 2014. A amostra de cada estado da federação foi distribuída da seguinte forma.
+
+Para o tamanho da amostra foi adotado a um erro de 10%, e um nível de confiança de 90%. Foi realizada seleção aleatória de municípios, com probabilidade de seleção igual, sem reposição.
+
+Feito isso, chegou-se à seguinte distribuição.
+
+Tendo em vista que a pesquisa problematiza a transparência passiva dos municípios goianos, os itens de interesse que foram extraídos da distribuição do plano amostral foram as observações que representam a proporção, por porte populacional, do estado do Goiás, que para um universo de 246 municípios, foi estimada uma amostra de 53 observações. Além das 53 observações da 3ª edição da EBT, foram reavaliados os municípios das 1ª e 2ª edições, permitindo observar a seguinte composição.
+
+Ao final do processo, a pesquisa utilizou-se da seguinte distribuição amostral de municípios goianos.
+
+### 3.3 Das variáveis de pesquisa
+
+_Variável dependente_
+
+Escala Brasil transparente (EBT): A nota final atribuída ao município mediante avaliação da 3ª Edição da Escala Brasil Transparente figura como a variável dependente da pesquisa. O valor será o proxy (EBT) que representará o nível de transparência passiva municipal. Esse valor refere-se a uma nota de 0 a 10, sendo 0 o valor mínimo e 10 o valor máximo. O município que for avaliado com nota final igual a 0, será dado o entendimento de ausência completa dos requisitos previstos na avaliação da EBT. Por sua vez, aquele município que for avaliado com nota final igual a 10, será dado o entendimento de total preenchimento dos requisitos ora mencionados.
+
+_Variáveis independentes_
+
+As variáveis explicativas selecionadas para o estudo estão alinhadas ao pressuposto assumido inicialmente de que municípios com melhores condições socioeconômicas tendem a possuir melhores níveis de transparência. Para que fosse possível a análise quantitativa dessas condições, fez-se necessária a coleta de indicadores que expressam essa realidade municipal.
+
+Diante da já mencionada escassez de pesquisas que se lancem a estudar a transparência passiva no Brasil, o presente estudo parte de resultados anteriores, nacionais e estrangeiros, para formular as variáveis explicativas.
+
+Os estudos considerados encontram-se divididos por tema, conforme se segue:
+
+Para tanto, os indicadores testados e julgados aplicáveis nas pesquisas ora mencionadas foram emulados, de forma sintética, pelos aspectos que refletem as características dos municípios goianos referentes à emprego e renda, desenvolvimento municipal, e finanças públicas, conforme se segue.
+
+**a) Emprego e renda**
+
+**- Salário Médio Mensal (SMM)**: Refere-se a informações coletadas e tabuladas pelo IBGE com base no Cadastro Central de Empresas. A partir dessas informações, o IBGE monta o perfil de emprego e renda dos municípios brasileiros a partir da média dos salários mínimos. Possui como unidade “salários mínimos”. O uso desse indicador objetiva verificar se há relação significativa entre a avaliação EBT e o salário médio mensal do município.
+
+**- População Economicamente Ativa (PEA)**: Este índice quantifica a população residente economicamente ativa de 16 anos ou mais na semana da coleta das informações, referente ao ano de 2010. Os dados são disponibilizados pelo Ministério da Saúde, por intermédio do Departamento de Informática do Sistema Único de Saúde (DATASUS), e se baseia na estimativa verificada pelo censo de 2010 (IBGE). Utiliza a unidade (pessoas). O uso desse indicador objetiva verificar se há relação significativa entre a avaliação EBT e o número de pessoas economicamente ativas do município.
+
+**- Taxa de Desocupação (DESOCUP)**: Este índice quantifica a população residente do estado de Goiás economicamente ativa que possua 16 anos ou mais e que se encontra sem ocupação (trabalho) na semana da coleta das informações. Refere-se ao ano de 2010, e utilizam a unidade “pessoas”. Os dados são disponibilizados pelo Ministério da Saúde, por intermédio do Departamento de Informática do Sistema Único de Saúde (DATASUS), e se baseia na estimativa verificada pelo censo de 2010 (IBGE). O uso desse indicador objetiva verificar se há relação significativa entre a avaliação EBT e o número de pessoas desocupadas no município.
+
+**- Taxa de Ocupação (OCUP)**: Refere-se a informações coletadas e tabuladas pelo IBGE com base no Cadastro Central de Empresas. A partir dessas informações, o IBGE monta o perfil de emprego e renda dos municípios brasileiros a partir da quantidade de pessoas ocupadas. Possui como unidade “pessoas”. O uso desse indicador objetiva verificar se há relação significativa entre a avaliação EBT e o número de pessoas ocupadas no município.
+
+**b) Desenvolvimento municipal**
+
+**- Índice de Desenvolvimento Humano Municipal (IDHM)**: Avalia, de 0 a 1, o nível de desenvolvimento humano municipal a partir de indicadores sobre renda, longevidade e educação. Os dados constam do Atlas do Desenvolvimento Humano, do PNUD (http://www.atlasbrasil.org.br/2013/pt/download), para o ano de 2010. O uso desse indicador objetiva verificar se há relação significativa entre a avaliação EBT e o número nível de desenvolvimento humano do município.
+
+**- Índice FIRJAN de Desenvolvimento Municipal (IFDM)**: é um índice desenvolvido pelo Sistema FIRJAN de acompanhamento anual do desenvolvimento socioeconômico dos municípios brasileiros em três áreas principais de atuação, a saber, emprego e renda, educação e saúde. É formulado tomando por base estatísticas públicas oficiais, disponibilizadas pelos ministérios responsáveis pela organização do trabalho, educação e saúde. Varia de 0 a 1, sendo 0 a nota mínima e 1 a nota máxima. Os dados são referentes ao ano base de 2016. O uso desse indicador objetiva verificar se há relação significativa entre a avaliação EBT e o índice de desenvolvimento municipal avaliado.
+
+**- Índice de homicídios (ÍNDICE_HOMIC)**: Os dados apresentados por esse indicador são obtidos a partir do Sistema de Informações sobre Mortalidade (SIM) do Ministério da Saúde. A base de dados do SIM consolida as certidões de óbito emitidas no local de sua ocorrência. Os óbitos considerados são os registrados em decorrência de causas externas (CID-10), decorrentes de agressões dolosas de terceiros. Usa como unidade “pessoas”. O uso desse indicador objetiva verificar se há relação significativa entre a avaliação EBT e o fator externo que implique na violência urbana extrema, resultando em homicídio doloso.
+
+**c) Finanças públicas**
+
+**- Produto Interno Bruto Municipal (PIB-M)**: O indicador se refere aos valores brutos dos três grandes setores de atividade econômica para o ano de 2016 (IBGE, 2016), a saber: agropecuária, indústria e serviços. São somados, ainda, dados relativos aos impostos. Usa como unidade “reais (R$)”. O uso desse indicador objetiva verificar se há relação significativa entre a avaliação EBT e a soma bruta da produção de bens e serviços do município.
+
+**- Receita Total (Receita_t)**: Refere-se à receita auferida pelo município que representa a disposição da edilidade. O total desses valores são disponibilizados pela Secretaria do tesouro Nacional (STN), tendo como base o ano de 2016, mesmo ano de referência da variável dependente EBT. Usa como unidade “reais (R$)”. O uso desse indicador objetiva verificar se há relação significativa entre a avaliação EBT e a receita total do município.
+
+**- Índice FIRJAN de Gestão Fiscal (IFGF)**: é um índice desenvolvido pelo Sistema FIRJAN para servir de ferramenta de controle social, tendo como objetivo o acompanhamento da gestão fiscal dos municípios. É formulado tomando por base dados públicos oficiais, disponibilizadas pelos estados e municípios, e avalia a alocação de recursos públicos, analisando a aplicação sobre cinco indicadores, a saber: Receita Própria, Gastos com Pessoal, Investimentos, Liquidez e Custo da Dívida. Varia de 0 a 1, sendo 0 a nota mínima e 1 a nota máxima. Os dados foram obtidos na página https://www.firjan.com.br/ifgf/downloads/, com demonstração de dados referentes ao ano base de 2016. O uso desse indicador objetiva verificar se há relação significativa entre a avaliação EBT e a avaliação da gestão fiscal do município.
+
+As demais variáveis explicativas refletem características qualitativas dos municípios, a saber:
+
+**- Mesorregião (MESO_REG)**: variável nominal categórica que reflete a localização do geográfica do município dentro da divisão regional na qual o estado de Goiás está dividido segundo parâmetros do IBGE (1989). As determinantes das dimensões que definem as mesorregiões são: o processo social, o quadro natural, e a rede de comunicação e de lugares (IBGE, 1989). As informações sobre essa variável foram coletadas no site do Instituto Mauro Borges de Estatísticas e Estudos Socioeconômicos (IMB), no site <www.imb.go.gov.br>. As mesorregiões consistem nas seguintes categorias: Norte (N), Sul (S), Centro (C), Noroeste (NO) e Leste (L). O uso desse indicador objetiva verificar se há relação significativa entre a avaliação EBT e as determinantes mesorregionais dos municípios goianos.
+
+**- Microrregião (MICRO_REG)**: variável nominal categórica que reflete um conjunto de municípios que comungam de características comuns, como quadro natural, organização da produção e integração. Possuem espaços organizados por: estrutura da produção agropecuária, industrial, extrativismo mineral, entre outras, podendo ainda resultar da presença de elementos do quadro natural ou de relações sociais e econômicas particulares (IBGE, 1990). As informações sobre essa variável foram coletadas no site do Instituto Mauro Borges de Estatísticas e Estudos Socioeconômicos (IMB), no site <www.imb.go.gov.br>. As microrregiões consistem em 18 (dezoito) categorias: 1 - São Miguel do Araguaia; 2 - Rio Vermelho; 3 - Aragarças; 4 - Porangatu; 5 - Chapada dos Veadeiros	; 6 - Ceres; 7 - Anápolis; 8 - Iporá;  9 - Anicuns; 10 - Goiânia; 11 - Vão do Paranã; 12 - Entorno de Brasília; 13 - Sudoeste de Goiás; 14 - Vale do Rio dos Bois; 15 - Meia Ponte; 16 - Pires do Rio; 17 - Catalão; e 18 - Quirinópolis. O uso desse indicador objetiva verificar se há relação significativa entre a avaliação EBT e as determinantes microrregionais dos municípios goianos.
+
+**- Filiação partidária do Gestor Municipal (PARTIDO)**: Esse indicador refere-se ao agrupamento dos municípios goianos a partir da filiação partidária do prefeito eleito em 2012. O uso desse indicador objetiva verificar se há relação significativa entre a avaliação EBT e o partido que ao qual o gestor municipal possui filiação.
+
+### 3.4 Da coleta e análise de dados
+
+_Coleta de dados_
+
+Com uso do Microsoft Excel 365, foi construído banco de dados quantitativos, tendo como variáveis os indicadores qualitativos e quantitativos ora mencionados. As observações do banco de dados referem-se a cada um dos 103 municípios goianos avaliados na 3ª Edição da EBT.
+
+A coleta de dados quantitativos e qualitativos se deu mediante acesso a bases de dados localizadas na rede mundial de computadores. O quadro a seguir indica a hospedagem de cada fonte de dados por endereço de hospedagem na internet e tipo de variável.
+
+A decisão assumida para a existência de missing values (dados inexistentes) foi de exclusão, tanto para as análises descritivas quanto para as inferenciais. 
+
+_Análise de dados_
+
+Foram adotadas as seguintes ferramentas lógicas para tratamento e formatação de dados: a) Microsoft Office Excel 365 (licenciado); e b) R Studio Version 1.1.456 (2009 - 2018) – software livre; e c) Suplemento Action Stat para Excel (licenciado).
+
+O tratamento de dados consiste em técnicas de análise bivariada e multivariada, conforme se segue.
+
+-	Análise bivariada: testes paramétricos, e testes não-paramétricos;
+-	Análise multivariada: regressão linear múltipla.
+
+## 4. DISCUSSÃO ANALÍTICA DOS RESULTADOS
+
+A fim de avaliar a influência do perfil socioeconômico na avaliação dos municípios goianos pela Escala Brasil Transparente, foram levantados, com base na literatura e estudos pregressos, indicadores que reflitam a realidade dos 103 municípios do estado de Goiás que integram a amostra da EBT 3ª Edição.
+
+Para verificar a existência (ou não) da influência das variáveis independentes sobre a dependente, foram empregadas técnicas de correlação, análise de desempenho da variável dependente quanto às características qualitativas, e de regressão linear múltipla. As ferramentas lógicas utilizadas para aplicar as técnicas estatísticas foram: MS Excel 365, R Studio e ActionStat  para Excel.
+
+### 4.1 Análise descritiva
+
+_Variável Dependente_
+
+A variável dependente, conforme já observado, é expressa pela avaliação dos municípios da amostra da Escala Brasil Transparente 3ª edição. A avaliação mensura o preenchimento dos quesitos que se referem à regulamentação da LAI e quanto à transparência passiva, atribuindo ao município uma nota que varia de 0 a 10, sendo 0 a menor nota possível e 10 a maior. A tabela 10 apresenta as características descritivas da variável dependente EBT.
+
+Conforme apresentado na tabela 9, os municípios que compõem a amostra apresentam baixo índice de transparência, que de 0 a 10 apresentaram valor médio de 2,64. A mediana é representada pela nota 1,94, que também é o valor modal, o que significa que pelo menos metade dos municípios avaliados não alcançaram 25% da nota possível, indicando grande descumprimento dos requisitos da LAI. O valor máximo alcançado é representado pela nota 8,33, atribuída ao município de Caiapônia. Chama atenção que 17 municípios receberam nota igual a 0, indicando que 16,6% dos municípios da amostra descumpriram integralmente os requisitos da LAI.
+
+As frequências absolutas e relativas são apresentadas pela tabela 11, e destacam a representação das mesorregiões Centro e Leste, que representam 38% e 30%, respectivamente, da amostra. As microrregiões representam, no máximo, 9% da amostra, com destaque para Ceres, maior porcentagem observada, e Chapada dos Veadeiros, menor porcentagem, com 1%. A categorização dos partidos políticos à frente dos municípios da amostra destaca a presença do PMDB em 23% dos municípios, seguido de PSDB, com 16%, e PSD, com 13%. AVANTE, PRB, PRTB e PTC representam 1% da amostra cada. Os demais partidos representam entre 2% e 9%.
+
+Ao categorizar a análise da EBT pelas mesorregiões goianas, é possível perceber que a mesorregião Noroeste possui a maior média, representada pela nota 3,70. Chama a atenção o fato de a mesorregião noroeste representar o penúltimo valor do PIB-M do estado de Goiás, se contrapondo ao pressuposto da pesquisa de que municípios socioeconomicamente mais desenvolvidos percebam melhor avaliação da transparência. Todas as mesorregiões apresentam baixa média de avaliação, sendo que as regiões Sul e Leste percebem valores abaixo da média geral. Somente a região leste percebe valor máximo menor que 5, indicando baixo grau de avaliação e cumprimento da LAI. Somente a região Noroeste possui nota mínima diferente de zero, percebendo a nota 1,94, indicando que, diferentemente das demais mesorregiões, todos os municípios atenderam, em certa medida, os requisitos da LAI, sendo a região Norte a que apresenta o maior número de observações, com 6 municípios com nota igual a 0. O valor modal entre as mesorregiões é apresentado pela nota 1,94, e somente a região Norte apresenta valor modal igual a 0.
+
+A categorização da EBT pelas 18 microrregiões goianas é apresentada pela tabela 13. Nela é possível observar um baixo valor médio entre as microrregiões. Nenhuma categoria alcançou a metade da pontuação possível, sendo a região do Rio Vermelho a que percebe o maior valor, com nota 4,12. Metade das microrregiões apresentam valor médio abaixo da média geral, que é 2,64, e a região da Chapada dos Veadeiros figura com ausência total de preenchimento dos requisitos, com menção zero. Oito regiões apresentam nota modal igual a 1,94, muito abaixo da média geral, que é 2,64. Apesar de figurar com a maior percepção do PIB-M, com 181 bilhões, a região de Goiânia apresenta média considerada baixa na avaliação EBT, com apenas 3,40 pontos.
+
+Considerando o partido político ao qual o gestor municipal (Prefeito) é filiado, é possível perceber 17 diferentes afiliações para as gestões de 2012 a 2016. O PMDB figura com a maior administração municipal, com 24 prefeitos eleitos, seguido por PSDB, com 16, e PSD, com 13. PRB, AVANTE e PTC administram uma prefeitura cada. Das 17 administrações partidárias, apenas duas pontuam com média acima da metade do valor possível, a saber, PRB (6,66) – maior valor percebido na categorização, e AVANTE (5,13). O PMDB, com 24 municípios, possui média de apenas 2,94, pouco acima da média geral. Oito administrações partidárias apresentam ao menos um município com nota igual a zero, e os 9 municípios que possuem o PT à frente, apesar de administrarem o maior PIB-M, na ordem de 194 trilhões, apresentam baixo valor médio, ficando longe da metade do valor máximo possível, com apenas 3,78.
+
+_Variáveis independentes quantitativas_
+
+A fim de verificar se existe influência do perfil socioeconômico municipal sobre a avaliação EBT das cidades goianas, foram levantados dados, expressos em indicadores, sobre aspectos que refletem as seguintes características: emprego e renda (SMM, PEA, DESOCUPAÇÃO, OCUPAÇÃO), desenvolvimento municipal (IDHM, ÍNDICE_HOMIC, IFDM), e finanças públicas (PIB-M, RECEITA t, IFGF). A tabela 15 apresenta a descrição de cada variável explicativa presente na pesquisa.
+
+No aspecto emprego e renda, os municípios da amostra apresentam baixa média salarial, com 2,64 salários mensais, e pequena variação quanto ao salário médio máximo, de 3,50, apresentado pela capital Goiânia, localizada no Centro goiano. Considerando a disparidade populacional existente entre os municípios avaliados, a amostra apresenta alto índice de PEA (18.553), sendo da capital Goiânia o valor que impacta sobre a média (734.004). Chama atenção que, mesmo com parte significativa da população estando ocupada – formal ou informalmente, esse fato não apresenta relação positiva com o nível de transparência, dado o baixo grau de avaliação dos municípios da amostra.
+
+No aspecto desenvolvimento municipal, a amostra apresenta que os municípios pesquisados possuem, segundo os parâmetros do IDH, desenvolvimento médio, com valor médio observado de 0,7. O município de Goiânia apresenta o maior índice de desenvolvimento humano, com 0,799, e Flores de Goiás o menor valor percebido, com 0,597. Apresentam, ainda, baixo valor médio no índice de homicídios (42), e IFDM médio indicando desenvolvimento moderado (0,7). Apenas 9 municípios apresentam alto desenvolvimento, a saber: Ceres, Caldas Novas, Cristalina, Edéia, Nova América, Goiânia, Rio Verde, Anápolis e Cachoeira Dourada, nessa ordem.
+
+No aspecto finanças públicas, a amostra apresenta indicadores significativos de arrecadação e produção. O PIB-M apresenta alto valor médio (7 tri), sendo a capital Goiânia o ponto discrepante da amostra, com 142 trilhões. O segundo maior PIB-M (Anápolis), apresenta valor muito inferior ao primeiro, com 38 trilhões. O menor PIB-M é percebido pelo município de Campinaçu. Quanto às receitas totais, a amostra indica as mesmas duas cidades nas primeiras colocações, a saber, Goiânia (4 bi) e Anápolis (1 bi). A menor receita, assim como o menor PIB-M, é percebida pelo município de Campinaçu, com 595 mil. Por fim, analisando a gestão desses recursos expressas pelo indicador IFGF, a amostra apresenta, em média, desenvolvimento regular, com índice 0,7. Nenhum município apresentou baixo desenvolvimento. Chama atenção o fato dos maiores detentores de receitas totais e produto interno brito apresentarem baixos índices de gestão fiscal, tendo sido avaliados os municípios de Goiânia e Anápolis, respectivamente, com 0,502 e 0,574. O município de Campinaçu, menor receita e PIB-M da amostra, apresenta IFGF maior que a capital, com 0,533, indicando não haver relação entre receita e gestão fiscal.
+
+_Teste de normalidade_
+
+As variáveis selecionadas para a pesquisa foram submetidas aos seguintes testes de normalidade: Shapiro-Wilk e Kolmogorov-Smirnov.
+
+Segundo trazido por Schwartz e Marciano (2017), os testes de Shapiro-Wilk e Kolmogorov-Smirnov pressupõem a formulação de duas hipóteses, a saber:
+
+Feito isso, observadas as estatísticas do teste W e o nível de significância, parte-se para a decisão de rejeitar ou aceitar H0. Caso o valor de significância (p-value) observado seja maior que o α estipulado (p > 0,05), é dado o entendimento de que “não existem evidências estatísticas significativas para se rejeitar H0, logo, a distribuição é considerada normal” (SCHWARTZ; MARCIANO, 2017, p. 86).
+
+A tabela 16 apresenta os testes de normalidade aplicados às variáveis da pesquisa.
+
+A variável dependente EBT não apresentou indícios de normalidade (p-value = 0,00 < 0,05) em ambos os testes, logo, rejeita-se H0 por entendermos que existem evidências estatísticas significativas para se rejeitar H0.
+
+As variáveis independentes SMM, PEA, DESOCUP, OCUP, ÍNDICE_HOMIC, PIB-M e RECEITA t, assim como a variável dependente, não apresentaram indícios de normalidade (p-value = 0,00 < 0,05) em ambos os testes, logo, rejeita-se H0 nesses casos, por entendermos que existem evidências estatísticas significativas para se rejeitar H0.
+
+Por outro lado, as variáveis independentes IDHM, IFDM e IFGF apresentaram indícios de normalidade (p-value > 0,05) em ambos os testes, logo, aceita-se H0 nesses casos, por entendermos que não existem evidências estatísticas significativas para se rejeitar H0.
+
+Dada a divergência apresentada nos testes de normalidade a que foram submetidas as variáveis, optou-se por aplicar testes paramétricos e não-paramétricos de correlação. Dessa forma, as inferências realizadas partirão de uma análise comparada dos resultados.
+
+### 4.2 Análise de diferença de médias
+
+A fim de comparar as médias da avaliação EBT a partir de sua categorização qualitativa, a saber, Mesorregião, Microrregião e Partido, foram utilizados os testes Tukey – paramétrico; e Kruskal-Wallis – não-paramétrico.
+
+O teste de Tukey é um teste paramétrico que testa se há igualdade d as médias para, a partir daí, analisar se fatores independentes interferem na variação de um determinado fator dependente. A estratégia adotada visa definir a menor diferença significativa, utilizando a amplitude da distribuição studentizada (MARTINS, 2006).
+
+O teste de Kruskal-Wallis, por sua vez, é um teste não-paramétrico que visa comparar três ou mais populações. É análogo ao teste F da ANOVA 1 fator, porém não depende da hipótese de que todas as populações sejam independentes e normalmente distribuídas (MARTINS, 2006).
+
+Ambos os testes pressupõem a formulação de duas hipóteses, a saber:
+
+A tabela 17 apresenta o resultado para o teste de Tukey para a variável EBT a partir da categoria Mesorregião.
+
+A tabela 18 apresenta o resultado para o teste de Kruskal-Wallis para a variável EBT a partir da categoria Mesorregião.
+
+Analisando as tabelas 17 e 18, é possível observar que há diferença entre os testes paramétricos e não-paramétricos.
+
+No teste de Tukey para a EBT x Mesorregiões, o valor de significância apresentado é 0,764, ou seja, maior que o estabelecido alfa (5%). Logo, não é possível rejeitar a hipótese alternativa de que as populações não possuem médias iguais.
+
+No teste de Kruskal-Wallis, o valor de significância apresentado é 0,033, ou seja, menor que o alfa estabelecido (5%). Dessa análise, não é possível rejeitar a hipótese nula de que as populações observadas possuem médias iguais.
+
+A tabela 19 apresenta o resultado para o teste de tukey para a variável EBT a partir da categoria Microrregião.
+
+A tabela 20 apresenta o resultado para o teste de Kruskal-Wallis para a variável EBT a partir da categoria Microrregião.
+
+Analisando as tabelas 19 e 20, tanto para o teste de Tukey quanto para o teste de Kruskal-Wallis os valores de significância apresentados são maiores que o alfa estabelecido (5%). No teste de Tukey para a EBT x Microrregiões, o valor de significância apresentado é 0,146, e no teste de Kruskal-Wallis o valor de significância apresentado é 0,108. Logo, não é possível rejeitar a hipótese alternativa de que as populações não possuem médias iguais.
+
+A tabela 21 apresenta o resultado para o teste de Tukey para a variável EBT a partir da categoria Partido.
+
+A tabela 22 apresenta o resultado para o teste de Kruskal-Wallis para a variável EBT a partir da categoria Partido.
+
+Analisando as tabelas 21 e 22, os testes também apresentaram valores de significância maiores que o alfa estabelecido (5%). No teste de Tukey para a EBT x Partidos, o valor de significância apresentado é 0,436, e no teste de Kruskal-Wallis o valor de significância apresentado é 0,416. Logo, não é possível rejeitar a hipótese alternativa de que as populações não possuem médias iguais.
+
+Do exposto, é possível afirmar que somente a variável independente categórica Mesorregião, que leva em consideração o processo social, o quadro natural, e a rede de comunicação e de lugares do estado de Goiás, apresentou grau de variação significante sobre a avaliação EBT.
+
+### 4.3 Análise de correlação
+
+O teste de correlação de Pearson mostra a intensidade da relação linear entre as variáveis. Seus valores podem variar de -1 a +1, sendo que 1 indica relação perfeita, e 0 ausência de correlação. Este teste pressupõe que os dados tenham passado por teste de normalidade, e verifica matematicamente a relação entre as variáveis observadas, ficando isenta, dessa forma, de implicações de causa e efeito. O teste de correlação de Spearman, por sua vez, verifica a intensidade da correlação a nível de mensuração ordinal, e não pressupõe que as variáveis observadas tenham passado por teste de normalidade (SCHWARTZ; MARCIANO, 2017, p. 92).
+
+Assumindo que toda correlação possui uma mínima probabilidade de ter se dado ao acaso, é preciso verificar, mediante teste estatístico, seu nível de significância dado um intervalo de confiança (IC = 95%). Para um p-value < 0,05, entende-se que há uma baixa probabilidade do valor R ser obra do acaso, e observando esse valor, opta-se por aceitar ou rejeitar H0 (SCHWARTZ; MARCIANO, 2017, p. 92).
+
+Para isso, a correlação é verificada a partir da assunção das seguintes hipóteses:
+
+A tabela 23 apresenta os testes de correlação aplicados às variáveis independentes.
+
+Observando a tabela 23, percebe-se que todas as variáveis apresentaram relação positiva com a variável dependente. Para o teste paramétrico, as seguintes variáveis apresentaram relação positiva significativa com a variável dependente: SMM, PEA, DESOCUPAÇÃO, OCUPAÇÃO, RECEITA total, ÍNDICE_HOMIC e PIB-M. Para o teste não-paramétrico, apenas três variáveis apresentaram relação positiva significativa, a saber: OCUPAÇÃO, PIB-M e IFGF. Apenas duas variáveis apresentaram relação positiva significativa em ambos os testes: OCUPAÇÃO e PIB-M.
+
+### 4.4 Análise de regressão
+
+A análise de regressão foi realizada utilizando o método dos mínimos quadrados (MMQ), que busca achar a menor soma do quadrado dos resíduos. Foram atendidos, ainda, os pressupostos da análise de regressão linear, no qual os resíduos apresentaram as seguintes características: normalidade, homocedasticidade, linearidade dos coeficientes estimados, e inexistência de auto correlação e colinearidade das variáveis explicativas.
+
+Primeiramente, é possível observar que o modelo estipulado é útil para prever a avaliação da EBT, uma vez que o valor de significação p-value = 0,01, logo, p-value < 0,05, indicando que há evidências estatísticas de que pelo menos uma entre as variáveis do modelo está relacionada com a variável dependente EBT.
+
+A tabela 24 apresenta os coeficientes e as significâncias das variáveis independentes.
+
+Analisando as significâncias das variáveis independentes presentes na tabela 24, é possível observar que as variáveis DESOCUP, ÍNDICE_HOMIC, IFGF e SMM apresentam p-value < 0,05, demonstrando que estão relacionadas individualmente com a variável independente EBT. Dessa forma, analisando os coeficientes percebidos pelas variáveis, é possível formular a seguinte equação:
+
+Da equação, é possível depreender que a variação de um ponto percentual na variável SMM representa a variação de 1 ponto na variável dependente EBT. Da mesma forma, a variável DESOCUP acarreta a variação negativa de 0,002 pontos percentuais na EBT. O INDICE_HOMIC impacta em 0,038 pontos percentuais a cada variação de 1 ponto. Por fim, a variável IFGF acarreta, a cada variação de 1 ponto percentual, a soma de 4 pontos na variável dependente.  O IFGF figura como a variável que mais impacta a variável dependente, corroborando a análise bivariada não-paramétrica a que foi submetida.
+
+A tabela 25 apresenta as estatísticas da regressão calculada, onde é possível observar que o R-quadrado ajustado (ajustamento da regressão) apresenta valor igual a 0,12, indicando que, no modelo, 12% da variabilidade dos valores da escala EBT é explicada pela variação ocorrida nas variáveis DESOCUP, ÍNDICE_HOMIC, IFGF e SMM.
+
+A tabela 26 apresenta a análise de variância da regressão. Nela, além da significância do modelo, é possível observar o impacto que as variáveis independentes imprimem sobre a variação dos resíduos do modelo. Caso fosse considerado somente a variável dependente para predição, a soma do quadrado dos resíduos (SQ) seria de 408,69, enquanto com a inclusão das variáveis independentes essa soma cai para 324,13.
+
+## 5. CONSIDERAÇÕES FINAIS E RECOMENDAÇÕES
+
+O presente estudo abordou a questão da transparência passiva da gestão pública de uma amostra de municípios do estado de Goiás. A partir da avaliação desses municípios pela Escala Brasil Transparente, promovida pela Controladoria-Geral da União (CGU), pretendeu-se verificar se características regionais, sociais, fiscais, econômicas e orçamentárias são significantes na explicação do grau atribuído nessa avaliação. Para isso, foi observada uma amostra de 103 municípios do estado de goiás, subdivididos por características geográficas (mesorregião e microrregião) e políticas (agrupamento dos municípios da amostra por partidos políticos cujos respectivos prefeitos eram filiados). Além das características categóricas apresentadas, buscou-se verificar características que demonstrassem os aspectos de emprego e renda, desenvolvimento municipal e das contas públicas.
+
+As análises teóricas utilizadas na pesquisa discorrem que a transparência dos atos de gestão se faz mister tanto nas organizações complexas privadas quanto no setor público. A relação contratual que emana da relação entre principal e agente pressupõe obrigações mútuas, onde não deve haver omissões, seja de ações ou informações, tanto do principal quanto do agente.
+
+A teoria deixa marcado que os indivíduos, seja no setor público ou privado, agente ou principal, perseguem seus próprios anseios, guardando para si suas reais intenções e ações com vistas a esse fim. Porém, em uma relação de obrigações mútuas, faz-se necessário que exista certo grau de controle do principal sobre seu agente. Nesse aspecto a literatura apresenta a transparência dos atos de gestão como ferramenta essencial para que se diminua essa assimetria de informação. Se no setor privado a transparência permite um controle do proprietário sobre seus recursos, no setor público a transparência permite que a sociedade exerça controle sobre a coisa pública, esta, estabelecida a partir do dinheiro dos contribuintes. A avaliação e responsabilização permanente dos agentes públicos permite ao cidadão controlar o poder concedido aos seus representantes, exercendo a autoridade de acordo com a legalidade da ação do Estado.
+
+Para que a sociedade possa exercer sua autoridade enquanto “Principal”, os setores de governo possuem a tarefa de construir mecanismos que permitam que isso aconteça. Nesse sentido, os marcos legais brasileiros indicam uma evolução gradativa nesse sentido. Em um primeiro momento, a legislação atentou para informações sobre execuções orçamentárias, em seguida deu um grande passo rumo à responsabilização fiscal de gestores e representantes, para então adquirir pressupostos modernos e efetivos, materializados pela LAI, definindo os níveis de transparência requeridos ao Estado brasileiro. A modernização trazida pela LAI possibilita, para além das obrigações do Estado, a capacidade cidadã de requerer qualquer informação aos entes de governo, resguardados os documentos classificados em grau de sigilo. Dessa forma, é possível que se fomente uma cultura de transparência no âmbito público, para a qual governo e instituições de educação possuem papel fundamental.
+
+A avaliação da EBT indica que a amostra de municípios goianos demonstrou, em linhas gerais, baixo índice de transparência passiva, onde 50% dos municípios tiveram nota menor que 2,5 (25% da nota possível). Além disso, 16,6% dos municípios da amostra descumpriram integralmente os requisitos, logrando nota igual a zero. Essa constatação indica amplo descumprimento das diretrizes presentes na LAI.
+
+Apesar de não representar a maior proporção da amostra e figurar como o último PIB entre as mesorregiões, a região Noroeste apresenta a maior média dentro de sua categoria, com nota 3,70. Além disso, todos os municípios da região Noroeste atenderam ao menos um requisito da LAI. Essa constatação indica que, para o estado de Goiás, em 2016, não se aplica o pressuposto inicial de que os municípios com melhores condições econômicas tendem a perceber melhor avaliação da transparência. Todas as mesorregiões apresentam baixa média de avaliação, sendo que as regiões Sul e Leste percebem médias abaixo da média geral.
+
+Todas as microrregiões apresentam, em linhas gerais, baixo valor médio na avaliação. Metade dos municípios nessa categoria apresentaram valor médio abaixo da média geral, que é 2,64. Chama atenção a região de Goiânia, que apesar de perceber um PIB de 181 bilhões de reais, apresenta baixo valor médio na avaliação, com apenas 3,40 pontos.
+
+Quanto à filiação partidária dos administradores municipais, percebe-se uma ampla representação de partidos tradicionais como PMDB (23% dos municípios) e PSDB (16% dos municípios). Apesar de figurar na primeira colocação, com quase o dobro do segundo colocado, o PMDB apresentou baixo valor médio na avaliação EBT, de apenas 2,64 pontos. O PT, apesar de administrar o maior PIB entre os municípios da amostra (cerca de 194 tri), apresenta baixo valor médio na avaliação e não alcançou nem a metade possível, com 3,78 pontos.
+
+Das análises das características qualitativas da amostra de municípios goianos avaliados pela EBT, é possível afirmar que, para o ano da avaliação, os pressupostos de relação positiva entre condições socioeconômicas e nível de transparência passiva foram negados. Apenas o aspecto mesorregional apresentou grau de variação significante sobre a avaliação EBT. Quanto à filiação partidária do gestor, bem como o montante financeiro que as legendas administram por intermédio de seus gestores filiados, não há relação positiva entre as duas condições, indicando que partidos e gestores possuem interesses distintos, seja uns para com os outros, ou para com a sociedade.
+
+No tocante aos aspectos socioeconômicos levantados mediante indicadores quantitativos, no aspecto emprego e renda os municípios da amostra apresentaram baixo valor médio salarial, com 2 salários mensais. A capital Goiânia apresenta o maior valor de SMM, com 3,50. O valor médio geral é baixo quando considerada a PEA média de 18.553. Outra constatação é que mesmo com parte significativa da população estando ocupada – formal ou informalmente, não há relação positiva com o nível de transparência, dado o baixo grau de avaliação dos municípios analisados na amostra.
+
+No aspecto desenvolvimento municipal, a amostra apresenta médio desenvolvimento, com valor médio observado do IDHM de 0,7. O município de Goiânia apresenta o maior índice de desenvolvimento humano, com 0,799, e Flores de Goiás o menor valor percebido, com 0,597. Apresentam baixo valor médio no índice de homicídios (42), e desenvolvimento moderado (IFDM 0,7). Apenas 9 municípios entre os 103 observados apresentam alto desenvolvimento.
+
+No aspecto finanças públicas, chama atenção o tato do município de Campinaçu, menor receita e PIB-M da amostra, apresenta IFGF maior que a capital, com 0,533, indicando não haver relação entre receita e gestão fiscal. A amostra apresenta indicadores significativos de arrecadação e produção. O PIB-M da amostra apresenta alto valor médio (7 tri), sendo a capital Goiânia que mais impacta na média amostral (142 trilhões). O menor PIB-M é percebido pelo município de Campinaçu. Quanto às receitas totais, a amostra indica as mesmas duas cidades nas primeiras colocações, a saber, Goiânia (4 bi) e Anápolis (1 bi). Analisando a gestão desses recursos expressas pelo indicador IFGF, a amostra apresenta, em média, desenvolvimento regular, com índice 0,7. Nenhum município apresentou baixo desenvolvimento. Chama atenção o fato de os maiores recursos financeiros municipais apresentarem baixos índices de gestão fiscal, tendo sido avaliados os municípios de Goiânia e Anápolis, respectivamente, com 0,502 e 0,574.
+
+A proposta de verificar a correlação da variável dependente com as variáveis explicativas apresentaram relação positiva em todas as variáveis testadas. Para o teste paramétrico, as variáveis SMM, PEA, DESOCUPAÇÃO, OCUPAÇÃO, RECEITA total e PIB-M apresentaram relação positiva significativa com a nota atribuída aos municípios goianos da amostra analisada. Para esses casos, é possível dizer que existem evidências estatísticas suficientes para afirmar que há relação entre a nota da EBT com dados referentes à emprego e renda e gestão de recursos.
+
+Para o teste não-paramétrico, três variáveis apresentaram relação positiva significativa, a saber: OCUPAÇÃO, PIB-M e IFGF. Duas variáveis apresentaram relação positiva significativa em ambos os testes: OCUPAÇÃO e PIB-M. Os resultados permitem avaliar que, para os termos propostos no recorte geográfico e temporal desta pesquisa, as variáveis explicativas que se referem à situação de emprego e renda da população possuem maior grau de explicação sobre o grau de transparência passiva dos municípios goianos avaliados pela Escala Brasil Transparente no ano de 2016. As variáveis explicativas que se referem à arrecadação e produção dos municípios apresentam significativo grau de explicação, exceto o que mensura a gestão fiscal municipal. Por fim, no que tange ao perfil de desenvolvimento municipal, as variáveis que explicam esse aspecto do perfil dos municípios apresentam baixa relação com a nota da EBT, sendo o índice de homicídios dos municípios o indicador que revela significância sobre o resultado explicado.
+
+O modelo proposto se mostrou útil enquanto ferramenta preditora da variável dependente EBT, apresentando indícios suficientes para afirmar que 12% da variabilidade dos valores da escala EBT é explicada pela variação ocorrida nas variáveis DESOCUP, ÍNDICE_HOMIC, IFGF e SMM. O grau de variabilidade apresentado é baixo, e requer que sejam testadas outras variáveis explicativas a fim de aumentar seu grau de predição.
+
+Ante o exposto, é recomendável que se testem novos indicadores e modelos de análise estatística, tanto para o recorte geográfico estudado quanto para outras regiões do Brasil, observando que os pressupostos explicativos dos estudos sobre transparência ativa diferem em grau de explicação quando aplicados à transparência passiva. Essa diferença pode decorrer da dicotomia de interesses entre agentes públicos e sociedade, abrindo margem para estudos interdisciplinares que busquem maior aprofundamento no comportamento político da população brasileira a partir de diferentes recortes regionais, bem como o seu reflexo na gestão da informação no setor público.
+
+## 6. REFERÊNCIAS BIBLIOGRÁFICAS
+
+AKUTSU, L.; PINHO, J. A. G. de. **Sociedade da informação, accountability e democracia delegativa: investigação em portais de governo no Brasil**. Revista de Administração Pública. Rio de Janeiro, v. 36, n.5, p. 723-745, set./out. 2002.
+
+ANDRADE, L.R.S.; ALCÂNTARA, C.M.G.; LINHARES, R.N. **Usos e compreensões das Tecnologias de Informação e comunicação (TIC): um olhar da juventude**. Revista EDaPECI, São Cristovão, v. 15, n. 2, p 354-369, 2015.
+
+ANJOS, L. C. M.; BARTOLUZZIO, A. I. S. S. **Análise de Conglomerados do Nível de Transparência Pública e Indicadores Socioeconômicos dos Municípios Pernambucanos**. XIII Congresso USP. São Paulo, 2016.
+
+BRASIL. Constituição (1988). **Constituição da República Federativa do Brasil**. Casa Civil da Presidência da República, Brasília, DF. 05 out. 1988.
+
+__________. **Decreto n. 7.724, de 16 de maio de 2012**. Regulamenta a Lei n. 12.527, de 18 de novembro de 2011, que dispõe sobre o acesso a informações previsto no inciso XXXIII do caput do art. 5°, no inciso II do § 3o do art. 37 e no § 2o do art. 216 da Constituição. Casa Civil da Presidência da República, Brasília, DF. 16 mai. 2012. 
+
+__________. Lei Complementar n. 131, de 27 de maio de 2009. Acrescenta dispositivos à Lei Complementar n. 101, de 4 de maio de 2000. Casa Civil da Presidência da República, Brasília, DF. 27 mai. 2009.
+
+__________. Lei Complementar n° 101, de 4 de maio de 2000. Estabelece normas de finanças públicas voltadas para a responsabilidade na gestão fiscal e dá outras providências. Casa Civil da Presidência da República, Brasília, DF. 04 mai. 2000.
+
+__________. Lei n. 12.527, de 18 de novembro de 2011. Regula o acesso a informações previsto no inciso XXXIII do art. 5o , no inciso II do § 3o do art. 37 e no § 2o do art. 216 da Constituição Federal; altera a Lei no 8.112, de 11 de dezembro de 1990; revoga a Lei no 11.111, de 5 de maio de 2005, e dispositivos da Lei no 8.159, de 8 de janeiro de 1991; e dá outras providências. Casa Civil da Presidência da República, Brasília, DF. 18 nov. 2011.
+
+CANELA, G.; NASCIMENTO, S. Acesso à informação e controle social das políticas públicas. In: PUBLICAÇÔES da CGU. Brasília: ANDI; Artigo 19, 2009.
+
+CASARIN, H. C. S; CASARIN, S. J. Pesquisa científica: da teoria à prática. Editora InterSaberes, São Paulo: 2012.
+
+CASTELLS, M. A Era da Informação: economia, sociedade e cultura, vol. 3, São Paulo: Paz e terra, 1999.
+
+CINCA, C. S.; TOMÁS, R.; TERRAGONA, P. Factors influencing e-disclosure in local public administrations. Faculdade de Ciências Económicas y Empresariales Universidad de Zaragoza, Documento de Trabajo 03, 2008.
+
+COASE, R. H. The Nature of the Firm. Economica, New Series, v. 4, nº 16, p. 386-405, Nov. 1937.
+
+COATS, J. C. Applications of principal-agent models to government contracting and accountability decision making. International Journal of Public Administration, Philadelphia, v. 25, p. 441-61, 2002.
+
+CONFEDERAÇÃO NACIONAL DOS MUNICÍPIOS. Finanças Públicas: noções básicas para os municípios. In: BIBLIOTECA da CNM. Brasília: CNM, v. 5, 2008.
+
+CONTRERAS, E.; MICHENER, G.; NISKIER, I.; Da opacidade à transparência?  Avaliando a Lei de Acesso à Informação no Brasil cinco anos depois. Revista de Administração Pública. Rio de Janeiro 52(4):610-629, jul. - ago. 2018.
+
+CONTROLADORIA-GERAL DA UNIÃO. Escala Brasil Transparente. Disponível em: <http://www.cgu.gov.br/assuntos/transparencia-publica/escala-brasil-transparente>. Acesso em 01 DEZ 18.
+
+CRUZ, C. F. Transparência da Gestão Pública Municipal: um estudo a partir dos portais eletrônicos dos maiores municípios brasileiros. Revista de Administração Pública. Rio de Janeiro, v. 46, n.1, p. 153-176, jan./fev. 2012.
+
+EISENHARDT, K. Agency theory: An assessment and review. Academy of Management Review, New York, v. 14, p. 57-74, 1989.
+
+FAMA, E. F. Agency Problems and the Theory of the Firm. The Journal of Political Economy, Chicago, v. 88, n. 2, p. 288-307, Apr. 1980.
+
+FEDERAÇÃO DAS ASSOCIAÇÕES DE MUNICÍPIOS DO RIO GRANDE DO SUL. Cartilha da Transparência para os Municípios. In: Publicações Transparência FAMURS. Porto Alegre: FAMURS, 2012.
+
+FEREJOHN, J. Accountability and authority. In: PRZEWORSKI, A.; STOKES, S.; MANIN, B. (orgs.). Democracy, accountability, and representation. Cambridge: Cambridge University Press. 1999.
+
+FÊU, C. H. Controle interno na administração pública: um eficaz instrumento de Accountability. Jus Navigandi, Teresina: 2003.
+
+GALERA, A. N.; BERJILLOS, A. R.; LOZANO, M. R.; VALENCIA, P. T. Identifying motivation of the local governments to improve the sustainability transparency. Transylvanian Review of Administrative Sciences, nº 45, p. 149-167.
+
+GALERA, A. N.; RODRIGUEZ, D. O.; QUILES, F. J. A.; GÓMEZ, J. L. Z. La divulgación de información sobre sostenibilidad en los gobiernos régionales y sus factores influyentes: El caso de Espana. Congresso AECA, 16, Granada, Espanha, 2011.
+
+GIL, A. C. Métodos e técnicas de pesquisa social. 6ª. Ed. São Paulo: Atlas, 2008.
+
+GRAU, N. C. A democratização da administração pública: os mitos a serem vencidos. In: Cadernos da Fundação Luís Eduardo Magalhães, nº 8 – Gestão pública e participação. Salvador: FLEM, 2005.
+
+GRAU, N. C. Responsabilización por el control social. In: La  esponsabilización em la nueva gestión pública latinoamericana. Buenos Aires: CLAD, BID. Editorial Universitaria de Buenos Aires, 2000.
+
+HEALD, D. Fiscal Transparency: Concepts, Measurement and UK Practice. Public Administration, Malden, v. 81, n. 4, p. 723-759, 2003.
+
+INSTITUTO BRASILEIRO DE GEOGRAFIA E ESTATÍSTICA. Censo Demográfico de 2010. Brasília, 2013.
+
+ISLAM, R. Do more transparent governments govern better? The World Bank, jun. (Policy Research Working Paper 3077). 2003.
+
+JENSEN, M. C. Self-Interest, Altruism, Incentives, & Agency Theory. Journal of Applied Corporate Finance, v. VII, n. 2, Summer 1994.
+
+JENSEN, M. C.; MECKLING, W. H. Teoria da firma: comportamento dos adeisenministradores, custos de agência e estrutura de propriedade. Rev.adm. empres., São Paulo, v. 48, n. 2, p. 87-125, June 2008.
+
+KAPLAN, Abraham. A conduta na pesquisa: metodologia para as ciências do comportamento. São Paulo: Herder, 1972.
+
+KELLSTEDT, P. M.; WHITTEN, G. D. Fundamentos da pesquisa em ciência política. 2ª Ed. São Paulo: Blucher, 2015.
+
+LINHARES, F.; SIMONASSI, A.; NOJOSA, G. A dinâmica do equilíbrio financeiro municipal e a LRF. Economia, Brasília: 2012.
+
+MARTINEZ, A.. L. Agency Theory na pesquisa contábil. In: XXII Encontro da ANPAD, 1998, Foz de Iguaçu. Anais…, 1998.
+
+MARTINEZ, L. A Theory of Political Cycles. Federal Reserve Bank of Richmond. Working Paper Series, nº. 05-04R, 2005.
+
+MARTINS, G. A. Estatística geral e aplicada. 3. ed. São Paulo: Atlas, 2006.
+
+MONSMA, K. Repensando a escolha racional e a teoria da agência: fazendeiros de gado e capatazes no século XIX. Rev. bras. Ci. Soc., São Paulo, v.15, n. 43, p. 83-114, June 2000.
+
+NOSSA, V.; KASSAI, S.; KASSAI, J. R.. A Teoria do Agenciamento e a Contabilidade. In: XXIV Encontro da ANPAD, Florianópolis, 2000. Anais..., ANPAD, 2000.
+
+OLIVEIRA, J. R. S.; MARTINEZ, A. L. A contabilidade e o hipertexto: um estudo sobre o uso de websites como meio de disseminação científica contábil por instituições de ensino superior brasileiras. Revista Contabilidade & Finanças, São Paulo, v. 18 n. 43, p. 97-108, jan./abr. 2007.
+
+OLIVEIRA, K. V.; CARVALHO, F A. A. de. A contabilidade governamental e a teoria dos ciclos políticos: uma análise empírica fiscal e contábil sobre os municípios do Estado do Rio de Janeiro 1998 / 2006. In: 18º Congresso Brasileiro de Contabilidade, 2008, Gramado. Anais..., CFC, 2008.
+
+OLIVEIRA, R. R.; SILVA, A. M. C.; MORAES, M. C. C. Transparência do orçamento governamental dos países: um estudo acerca da associação entre IAO, IDH, PIB e IPSAS. Pensar Contábil, Rio de Janeiro, v. 10, n. 42, p. 5-11, out./dez. 2008.
+
+PAIVA, C.P.R.; ZUCCOLOTTO, R. Índice de transparência fiscal das contas públicas dos municípios obtidos em meios eletrônicos de acesso público. In: ENCONTRO DA ANPAD, XXXIII, São Paulo, 2009. Anais. Anpad, 2009.
+
+PEREZ, M. C. C.; RODRÍGUEZ BOLÍVAR, M. P.; LÓPEZ HERNÁNDEZ, A. M. The Determinants Of Government Financial Reports Online. Transylvanian Review of Administrative Sciences, [S.l.], p. 5-31, Jun. 2014.
+
+PINHO, J. A. G. Accountability em portais estaduais e municipais no Brasil: realidades distantes das promessas. In: ENCONTRO DE ADMINISTRAÇÃO PÚBLICA E GOVERNANÇA, II, São Paulo, 2006. Anais. São Paulo: Anpad, 2006.
+
+PINHO, J. A. G. Investigando portais de governo eletrônico de estados no Brasil: muita tecnologia, pouca democracia. Revista de Administração Pública. 42 (3). Rio de Janeiro, 2008.
+
+PINHO, J. A. G; SACRAMENTO, A.R. S. Accountability: já podemos traduzi-la para o português? Revista de Administração Pública. 43 (6). Rio de Janeiro, 2009.
+
+PLATT NETO, O.A.; CRUZ, F.; ENSSLIN, S. R.; ENSSLIN, L. Publicidade e transparência das contas públicas: obrigatoriedade e abrangência desses princípios na administração pública brasileira. Contabilidade Vista & Revista, Belo Horizonte, v. 18, n. 1, p. 75-94, jan./mar. 2007.
+
+POPPER, K. R. The logic of scientific discovery. Londres: Hutchinson, 1972.
+
+PRZEWORSKI, A. Sobre o desenho do Estado: uma perspectiva agente x principal. In: BRESSER-PEREIRA, L. C.; SPINK, P. (orgs.). Reforma do Estado e administração pública gerencial. Rio de Janeiro: Ed. da FGV. 2001.
+
+ROCHA, C. V. Gestão pública municipal e participação democrática no Brasil. Revista de Sociologia Política, Curitiba, v. 19, n. 38, p. 171-185, fev. 2011. 
+
+RODRIGUES, A.; PAULO, E. Introdução à Análise Multivariada. In: Análise multivariada: para os cursos de administração, ciências contábeis e economia. Fundação Instituto de Pesquisas Contábeis, Atuariais e Financeiras. São Paulo: Atlas, 2009, p. 1-72.
+
+ROUSSEAU, J.J. O contrato social. São Paulo, Martins Fontes, 1996.
+
+SAITO, R.; SILVEIRA, A. D. M. Governança corporativa: custos de agência e estrutura de propriedade. Rev. adm. empres. São Paulo, v. 48, n. 2, p. 79-86, Junho de 2008.
+
+SANTANA JUNIOR, J. J. B. Transparência fiscal eletrônica: uma análise dos níveis de transparência apresentados nos sites dos poderes e órgãos dos Estados e do Distrito Federal do Brasil. 2008. 176f. Dissertação (Mestrado em Ciências Contábeis) – Programa Multinstitucional e Inter-regional de Pós-graduação em Ciências Contábeis. Recife, 2008.
+
+SATO, C. S. Utilizando a internet na administração pública. Texto para discussão, 22. Brasília: ENAP, 1997.
+
+SCHWARTZ, F. P., MARCIANO, J. L. P. Análise estatística de dados com ênfase em Pesquisas Legislativas. Brasília, DF, 2017. 226p.
+
+SILVA, W.A.O. Variáveis determinantes para a transparência pública passiva nos municípios brasileiros. 76 f. 2017. Dissertação (Mestrado) - Escola de Administração, Universidade Federal da Bahia, Salvador, 2017.
+
+SIFFERT FILHO, N. F. A teoria dos contratos econômicos e a firma. Tese (Doutorado em Controladoria e Contabilidade). 1996. 204f. Faculdade de Economia, Administração e Contabilidade da Universidade de São Paulo. São Paulo, 1996.
+
+SLOMSKI, V. Controladoria e Governança na Gestão Pública. São Paulo, Atlas, 2005.
+
+SLOMSKI, V. Teoria do Agenciamento no Estado – uma evidenciação da distribuição de renda econômica produzida pelas entidades públicas de administração direta. 1999. 107f. Tese (Doutorado em Controladoria e Contabilidade). Faculdade de Economia, Administração e Contabilidade da Universidade de São Paulo, São Paulo, 1999.
+
+SLOMSKI, V.; MELLO, G. R. de; TAVARES FILHO, F.; MACÊDO, F. Q. Governança Corporativa e Governança na Gestão Pública. São Paulo, Atlas, 2008.
+
+SOUSA, R. G.; WRIGHT, G. A.; PAULO, E.; MONTE, P. A. A janela que se abre: um estudo empírico dos determinantes da transparência ativa nos governos dos estados brasileiros. Revista ambiente contábil. nº 1, vl VII, Natal, 2015.
+
+STIGLITZ, J. On liberty, the right to know, and public discourse: the role of transparency in public life. Oxford: Amnesty Lectures, 1999.
+
+STYLES, A. K; TENNYSON, M. The accessibility of financial reporting of U.S. municipalities on the Internet. Journal of Public Budgeting, Accounting & Financial Management, Florida, v. 19, n. 1, p. 56-92, Spring, 2007.
+
+VIEIRA, Sônia. Como Elaborar Questionários. São Paulo: Editora Atlas, 2009.
+
+WRIGHT, G. A. Análise dos fatores determinantes da transparência fiscal ativa nos municípios brasileiros, 2013. 123f. Dissertação de mestrado apresentada ao Programa Multiinstitucional e Inter-Regional de Pós-Graduação em Ciências Contábeis UnB/UFPB/UFRN. 2013.<div/>
